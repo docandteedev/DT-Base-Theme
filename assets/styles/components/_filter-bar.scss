@@ -1,0 +1,26 @@
+.tax-filters {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+
+    label {
+        display: flex;
+        justify-content: space-between;
+        width: 275px;
+
+        .filter-title {
+            width: 60px;
+            align-self: center;
+        }
+
+        #filter-category {
+            height: 100%;
+        }
+
+        .filter-buttons {
+            margin-right: -17px;
+        }
+
+    }
+
+}

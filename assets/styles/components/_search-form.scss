@@ -1,0 +1,15 @@
+.search-form {
+  min-height: 35px;
+
+  .input-group {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    height: 100%;
+  }
+
+  .search-field {
+    min-width: 270px;
+  }
+
+}

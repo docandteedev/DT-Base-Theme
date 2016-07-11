@@ -6,4 +6,18 @@ $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
 // Colors
-$brand-primary:         #27ae60;
+$brand-primary:      #2c3e50;
+
+// Navbar
+$navbar-bg-color: $brand-primary;
+$navbar-lg-link-color: white;
+$navbar-lg-link-hover-color: darken(#2c3e50, 10%);
+$navbar-lg-height: 80px;
+$navbar-sm-height: $navbar-lg-height;
+
+// Off-Canvas
+$off-canvas-bg-color: #212121;
+
+// Top Nav
+$topnav-bg-color: lighten($brand-primary, 5%);
+$topnav-height: 35px;

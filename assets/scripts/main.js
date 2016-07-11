@@ -7,7 +7,7 @@
  *
  * .noConflict()
  * The routing is enclosed within an anonymous function so that you can
- * always reference jQuery with $, even when in .noConflict() mode.
+ * always reference jquery with $, even when in .noConflict() mode.
  * ======================================================================== */
 
 (function($) {
@@ -18,13 +18,87 @@
     // All pages
     'common': {
       init: function() {
-        // JavaScript to be fired on all pages
 
-        $(document).foundation(); // Foundation JavaScript
+        // JavaScript to be fired on all pages
+        $(document).foundation(); 
+
+
+        // Fonts
+        WebFont.load({
+          google: {
+            families: ['Montserrat']
+          }
+        });
+
+        // Dev
+        console.log("START");
+
+        // Navbar height change on scroll
+        var initNavHeight = 80,
+            initLogoHeight = $('.site-logo').height(),
+            initLogoWidth = $('.site-logo').width(),
+            navTop = $('.large-nav-bar').offset().top,
+            factor = 1.5;
+
+        $(function(){
+          $('.large-nav-bar').data('size','big');
+          $('.site-logo').data('size','big');
+        });
+
+        $(window).scroll(function(){
+          if($(document).scrollTop() > 0) {
+            if($('.large-nav-bar').data('size') === 'big') {
+
+              $('.large-nav-bar').data('size','small');
+              $('.large-nav-bar').stop().animate({
+                height: initNavHeight / factor
+              },600);
+
+              // $('.site-logo').data('size','small');
+              // $('.site-logo').stop().animate({
+              //   height: initLogoHeight / factor,
+              //   width: initLogoWidth / factor
+              // },600);
+
+              $('.large-nav-bar-lower').stop().animate({
+                height: initNavHeight / factor
+              }, 600);
+
+            }
+          }
+          else {
+            if($('.large-nav-bar').data('size') === 'small') {
+
+              $('.large-nav-bar').data('size','big');
+              $('.large-nav-bar').stop().animate({
+                height: initNavHeight + 'px'
+              },600);
+
+              // $('.site-logo').data('size','big');
+              // $('.site-logo').stop().animate({
+              //   height: initLogoHeight,
+              //   width: initLogoWidth
+              // },600);
+
+              $('.large-nav-bar-lower').stop().animate({
+                height: initNavHeight
+              }, 600);
+
+            }
+          }
+
+        });
+
+        // Animations
+        new WOW().init();
+
+        // Lazy Loading
+        $(".lazy").lazyload();
         
       },
       finalize: function() {
-        // JavaScript to be fired on all pages, after page specific JS is fired
+         // Dev
+        console.log("END");
       }
     },
     // Home page

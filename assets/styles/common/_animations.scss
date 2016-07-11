@@ -1,0 +1,11 @@
+.animated-bouce {
+    @include bounceIn();
+}
+
+.animate-fade {
+    @include fadeIn();
+}
+
+.animate * {
+    display: none;
+}

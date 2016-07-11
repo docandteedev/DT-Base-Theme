@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "main.js": {
+      "bower": ["foundation-sites", "webfontloader", "smoothstate", "motion-ui", "wow", "jquery_lazyload", "isotope"],
       "files": [
-        "scripts/main.js"
+        "scripts/main.js",
+        "scripts/isotope.js"
       ],
       "main": true
     },
@@ -22,6 +24,6 @@
     }
   },
   "config": {
-    "devUrl": "https://base.dev"
+    "devUrl": "http://localhost:8000"
   }
 }

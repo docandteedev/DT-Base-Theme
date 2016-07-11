@@ -4,19 +4,40 @@
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/foundation-sites/scss/foundation.scss";
+@import "../../bower_components/animatewithsass/animate.scss";
 // endbower
 
-@include foundation-everything;
+// NPM imports
+@import "node_modules/font-awesome/scss/font-awesome";
+@import "node_modules/motion-ui/src/motion-ui";
+
+// Import foundation with FlexBox mode set to true
+@include foundation-everything(true);
 
 @import "common/global";
+
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
 @import "components/grid";
+@import "components/topnav";
 @import "components/wp-classes";
+@import "components/social-icons";
+@import "components/post-block";
+@import "components/filter-bar";
+@import "components/search-form";
+
+@import "layouts/page-header";
 @import "layouts/header";
+@import "layouts/header--logo-center";
 @import "layouts/sidebar";
 @import "layouts/footer";
 @import "layouts/pages";
 @import "layouts/posts";
+@import "layouts/posts-archive";
 @import "layouts/tinymce";
+@import "layouts/off-canvas";
+@import "layouts/landing-page";
+
+
+@import "common/animations"; // NEEDS TO BE LAST!!!!!!!!

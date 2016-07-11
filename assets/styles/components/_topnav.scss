@@ -1,0 +1,47 @@
+.navbar-topnav {
+  background-color: $topnav-bg-color;
+  height: $topnav-height;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  z-index: 10;
+
+  @include breakpoint(medium down) {
+    display: none;
+  }
+
+  .top-bar-right {
+    position: absolute;
+    right: 0;
+  }
+
+  .menu {
+    li a {
+      color: white;
+      font-family: 600;
+    }
+  }
+
+  .nav-topbar-search-form {
+    margin-right: -10px;
+    display: flex;
+    height: 35px;
+
+    .search-field {
+      height: 100%;
+      width: 300px;
+      max-width: none !important;
+      margin-right: -1px;
+    }
+
+    .search-submit {
+      height: 100%;
+      width: 100px;
+      font-weight: 500;
+    }
+
+  }
+
+
+
+}
