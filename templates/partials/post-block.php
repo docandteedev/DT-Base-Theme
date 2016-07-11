@@ -1,4 +1,4 @@
-<?php 
+<?php
 use \Roots\Sage\Titles;
 $thumb_id = get_post_thumbnail_id();
 $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
@@ -19,7 +19,7 @@ if ( !empty( $filter_taxonomies ) ) {
 
 ?>
 
-<div class="post-block post-block--<?php  echo get_post_type(); ?> lazy wow fadeInUp <?php echo ( empty( $extra_classes ) ) ? '' : ' ' . implode( ' ', $extra_classes ); ?> " data-original="<?php echo $thumb_url; ?>" data-wow-duration="2s">
+<div class="post-block post-block--<?php  echo get_post_type(); ?> lazy wow fadeInUp <?php echo ( empty( $extra_classes ) ) ? '' : ' ' . implode( ' ', $extra_classes ); ?> " data-original="<?php echo $thumb_url; ?>" data-wow-duration="2s" data-title="<?php echo the_title(); ?>" data-lat="<?php echo get_field('post_latitude'); ?>" data-lng="<?php echo get_field('post_longitude'); ?>">
     <a class="post-block-inner" href="<?php the_permalink() ?>">
         <h3 class="post-title"><?= Titles\title(); ?></h3>
         <h6 class="post-date"><?php echo get_the_date(); ?></h6>

@@ -37,6 +37,13 @@ if ( function_exists( 'get_field' ) ) {
 	unset( $tmp );
 }
 
+global $show_map;
+if ( function_exists( 'get_field' ) ) {
+	$tmp = get_field( 'archive_show_map' );
+	$show_map = ( !empty( $tmp ) ) ? $tmp : $show_map;
+	unset( $tmp );
+}
+
 ?>
 
 <div class="post-archive">
@@ -45,6 +52,8 @@ if ( function_exists( 'get_field' ) ) {
 			<?php get_template_part('templates/page', 'header'); ?>
 			<?php get_template_part('templates/content', 'page'); ?>
 			<?php get_template_part("templates/partials/post-filterbar"); ?>
+			<?php get_template_part("templates/partials/post-map"); ?>
 			<?php get_template_part("templates/post-archive"); ?>
 		<?php endwhile; ?>
 	<?php endif; wp_reset_postdata(); wp_reset_query(); ?>
+</div>
