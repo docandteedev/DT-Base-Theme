@@ -16,7 +16,12 @@
     "isotope": "^3.0.1",
     "wow": "wowjs#^1.1.2",
     "animate.css": "^3.5.2",
-    "google-maps": "^3.2.1"
+    "google-maps": "^3.2.1",
+    "lightbox2": "^2.8.2",
+    "motion-ui": "^1.2.2",
+    "video.js": "^5.10.7",
+    "fancyBox": "^2.1.5",
+    "vide": "^0.5.0"
   },
   "overrides": {
     "foundation-sites": {
@@ -49,9 +54,30 @@
         "./dist/wow.min.js"
       ]
     },
-    "google-maps":{
+    "google-maps": {
       "main": [
         "./lib/Google.js"
+      ]
+    },
+    "motion-ui": {
+      "main": [
+        "./src/motion-ui.scss"
+      ]
+    },
+    "video.js": {
+      "main": [
+        "./dist/video.js",
+        "./src/css/video-js.scss"
+      ]
+    },
+    "fancyBox": {
+      "main": [
+        "./source/jquery.fancybox.pack.js"
+      ]
+    },
+    "vide": {
+      "main": [
+        "./dist/jquery.vide.js"
       ]
     }
   }
