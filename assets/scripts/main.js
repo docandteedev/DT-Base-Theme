@@ -20,8 +20,14 @@
       init: function() {
 
         // JavaScript to be fired on all pages
-        $(document).foundation(); 
+        $(document).foundation();
 
+        // fancybox
+        $('.fancybox').fancybox({
+            padding : 0,
+            openEffect  : 'elastic',
+            closeBtn: false
+        });
 
         // Fonts
         WebFont.load({
@@ -29,9 +35,6 @@
             families: ['Montserrat']
           }
         });
-
-        // Dev
-        console.log("START");
 
         // Navbar height change on scroll
         var initNavHeight = 80,
@@ -94,7 +97,8 @@
 
         // Lazy Loading
         $(".lazy").lazyload();
-        
+
+
       },
       finalize: function() {
          // Dev
