@@ -22,16 +22,16 @@ function customize_preview_js() {
 add_action('customize_preview_init', __NAMESPACE__ . '\\customize_preview_js');
 
 /**
-* Add Navbar Config
+* Add thread_comments Config
 */
-function navbar_customize_register($wp_customize)
+function theme_customize_register($wp_customize)
 {
 
   $wp_customize->add_section(
-    'navbar_section',
+    'theme_section',
     array(
-    'title' => 'Navigation Settings',
-    'description' => 'Edit the Navigation type.',
+    'title' => 'Theme Settings',
+    'description' => 'Edit the Theme types.',
     'priority' => 55,
     )
   );
@@ -48,7 +48,7 @@ function navbar_customize_register($wp_customize)
     'navbar_type',
     array(
       'label' => 'Navbar Type',
-      'section' => 'navbar_section',
+      'section' => 'theme_section',
       'type' => 'select',
       'choices' => array(
         'inline' => 'Inline',
@@ -61,7 +61,7 @@ function navbar_customize_register($wp_customize)
 
 }
 
-add_action('customize_register', __NAMESPACE__ . '\\navbar_customize_register');
+add_action('customize_register', __NAMESPACE__ . '\\theme_customize_register');
 
 /**
 * Add Landing Page Config
@@ -85,15 +85,15 @@ function landing_customize_register($wp_customize)
     )
   );
 
- $wp_customize->add_control( 
-    new WP_Customize_Upload_Control( 
-    $wp_customize, 
-    'landing_background', 
+ $wp_customize->add_control(
+    new WP_Customize_Upload_Control(
+    $wp_customize,
+    'landing_background',
     array(
       'label'      => 'Landing background',
       'section'    => 'landing_section',
       'settings'   => 'landing_background'
-    ) ) 
+    ) )
   );
 
 }
@@ -148,3 +148,12 @@ add_image_size('mytheme-logo', 75, 55);
 add_theme_support('custom-logo', array(
     'size' => 'mytheme-logo'
 ));
+
+// Row Type
+function get_row_type() {
+    if(get_field('full_width_container')) {
+      return 'fullwidth-row';
+    } else {
+      return 'row';
+    }
+  }

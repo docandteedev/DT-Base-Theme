@@ -17,7 +17,14 @@ $sage_includes = [
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php', // Theme customizer
   'lib/social-option-page.php', // The option pages that controls social account links/icons
-  'lib/theme-settings-menu.php'  // The menu that allows user to set API keys etc...
+  'lib/theme-settings-menu.php',  // The menu that allows user to set API keys etc...
+  'lib/gallery-output.php',
+  'lib/cpt.php',
+  'lib/post-types/sliders.php',
+  'lib/social-widget.php',
+  'lib/api-extension.php',
+  'lib/protected-name.php',
+  'lib/content-block-fields.php'
 ];
 
 foreach ($sage_includes as $file) {

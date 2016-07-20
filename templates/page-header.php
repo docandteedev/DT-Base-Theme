@@ -4,8 +4,9 @@ $thumb_id = get_post_thumbnail_id();
 $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
 $thumb_url = $thumb_url_array[0];
 ?>
-
-<?php if( has_post_thumbnail() ): ?>
+<?php if(!empty(get_field('slide'))): ?>
+    <?php get_template_part('templates/content-single-slider'); ?>
+<?php elseif( has_post_thumbnail() ): ?>
   <header class="page-header lazy" data-original="<?php echo $thumb_url; ?>">
       <div class="page-header-inner">
           <h1 class="entry-title"><?= Titles\title(); ?></h1>

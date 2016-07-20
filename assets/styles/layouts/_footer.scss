@@ -1,0 +1,51 @@
+.footer {
+  display: none;
+  min-height: 65px;
+  width: 100%;
+  position: absolute;
+  bottom: 0 !important;
+  left: 0;
+  background-color: $brand-primary;
+
+  .footer-inner {
+    @include grid-row;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-decoration: none;
+  }
+
+  .dev-accred {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .legal-citation {
+      color: white;
+      padding-left: 10px;
+      margin-bottom: 0;
+    }
+
+    .dev-accred-link {
+      font-size: 14pt;
+      color: white;
+      font-family: monospace;
+    }
+
+    .dev-accred-logo {
+      height: 40px;
+      width: auto;
+      padding-right: 10px;
+      padding-left: 25px;
+    }
+
+  }
+
+}

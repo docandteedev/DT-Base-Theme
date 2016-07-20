@@ -21,7 +21,9 @@
     "motion-ui": "^1.2.2",
     "video.js": "^5.10.7",
     "fancyBox": "^2.1.5",
-    "vide": "^0.5.0"
+    "vide": "^0.5.0",
+    "featherlight": "^1.5.0",
+    "rxjs": "^4.1.0"
   },
   "overrides": {
     "foundation-sites": {
@@ -78,6 +80,17 @@
     "vide": {
       "main": [
         "./dist/jquery.vide.js"
+      ]
+    },
+    "featherlight": {
+      "main": [
+        "./release/featherlight.min.js",
+        "./release/featherlight.gallery.min.js"
+      ]
+    },
+    "rxjs": {
+      "main": [
+        "./dist/rx.all.js"
       ]
     }
   }

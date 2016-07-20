@@ -5,11 +5,15 @@
 // bower:scss
 @import "../../bower_components/foundation-sites/scss/foundation.scss";
 @import "../../bower_components/animatewithsass/animate.scss";
+@import "../../bower_components/motion-ui/src/motion-ui.scss";
+@import "../../bower_components/video.js/src/css/video-js.scss";
 // endbower
 
-// NPM imports
+
 @import "node_modules/font-awesome/scss/font-awesome";
-@import "node_modules/motion-ui/src/motion-ui";
+@import "bower_components/featherlight/release/featherlight.min.css";
+// @import "bower_components/featherlight/release/featherlight.gallery.min.css";
+
 
 // Import foundation with FlexBox mode set to true
 @include foundation-everything(true);
@@ -27,6 +31,12 @@
 @import "components/filter-bar";
 @import "components/search-form";
 @import "components/map";
+@import "components/gallery";
+@import "components/slider";
+@import "components/content-block";
+@import "components/post-archive-search";
+@import "components/blockquote";
+@import "components/hover-block";
 
 @import "layouts/page-header";
 @import "layouts/header";
@@ -39,6 +49,7 @@
 @import "layouts/tinymce";
 @import "layouts/off-canvas";
 @import "layouts/landing-page";
+@import "layouts/404";
 
 
 @import "common/animations"; // NEEDS TO BE LAST!!!!!!!!

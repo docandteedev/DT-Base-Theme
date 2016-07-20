@@ -22,12 +22,8 @@
         // JavaScript to be fired on all pages
         $(document).foundation();
 
-        // fancybox
-        $('.fancybox').fancybox({
-            padding : 0,
-            openEffect  : 'elastic',
-            closeBtn: false
-        });
+        // featherlight lightbox
+        $('.gallery').featherlightGallery();
 
         // Fonts
         WebFont.load({
@@ -96,8 +92,30 @@
         new WOW().init();
 
         // Lazy Loading
-        $(".lazy").lazyload();
+        $(".lazy").lazyload({
+          threshold : 6
+        });
 
+        $('.slider').click(function(){
+          var video = $(this).find('video')[0];
+          if(video.pause) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+
+        $('.mute-slider-icon').hide();
+        $('.mute-slider-toggle').click(function(){
+            $('video').prop('muted', !$('video').prop('muted'));
+            if($('video').prop('muted')){
+              $('.mute-slider-icon').show();
+              $('.unmute-slider-icon').hide();
+            } else {
+              $('.mute-slider-icon').hide();
+              $('.unmute-slider-icon').show();
+            }
+        });
 
       },
       finalize: function() {
@@ -109,6 +127,7 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
+        $('.title-bar').css("background:none");
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

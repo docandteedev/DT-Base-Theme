@@ -55,7 +55,7 @@ function ct_post_gallery($output, $attr) {
 
         $output .= "<div class=\"gallery-item lazy wow fadeInUp\" data-original=\"{$img[0]}\">\n";
           $output .= "<div class=\"gallery-item-inner\">\n";
-            $output .= "<a href=\"{$img[0]}\" class=\"fancybox\" rel=\"gallery\" data-fancybox-title=\"The Caption\"></a>\n";
+              $output .= "<a href=\"#\" rel=\"gallery\" data-featherlight=\"{$img[0]}\"></a>\n";
           $output .= "</div>\n";
         $output .= "</div>\n";
     }

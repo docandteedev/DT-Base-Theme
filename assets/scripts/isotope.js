@@ -4,8 +4,8 @@
         var key = $('.post-map').data('map-key');
         GoogleMapsLoader.KEY = key;
 
-        var map = void 0;
-        var goog = void 0;
+        var map;
+        var goog;
 
         GoogleMapsLoader.load(function (google, map) {
 
@@ -50,11 +50,9 @@
             var map = $('.post-map');
             var toggle = $('#toggle-map');
             if (map.data('hidden')) {
-                toggle.attr('value', 'Hide Map');
                 map.data('hidden', false);
                 map.fadeIn();
             } else {
-                toggle.attr('value', 'Show Map');
                 map.data('hidden', true);
                 map.fadeOut();
             }
@@ -67,6 +65,7 @@
         var tope = $(this);
         var filters = tope.data('filters');
         var filters_reset = tope.data('filters-reset');
+        var filter_type = tope.data('filter-type');
         var doing_filtering = false;
 
         if (tope.length) {
@@ -78,6 +77,23 @@
             tope.isotope({
                 itemSelector: tope.data('itemselector'),
                 layoutMode: 'masonry'
+            });
+
+
+            $('#list-view-toggle').click(function(){
+              $('.post-block').addClass('post-block-list');
+              $('.post-block').removeClass('post-block');
+              tope.isotope({
+                layoutMode: 'vertical'
+              });
+            });
+
+            $('#grid-view-toggle').click(function(){
+              $('.post-block-list').addClass('post-block');
+              $('.post-block-list').removeClass('post-block-list');
+              tope.isotope({
+                layoutMode: 'masonry'
+              });
             });
 
             if ('undefined' !== typeof filters_reset && filters_reset.length) {
@@ -104,6 +120,7 @@
 
             if ('undefined' !== typeof filters && filters.length) {
                 var tope_filters = $(filters);
+
                 tope_filters.change(function () {
 
                     if (doing_filtering) {
@@ -115,7 +132,20 @@
 
                     var filter_string = '';
 
-                    filters.each(function () {
+                    if(filter_type === 'Tax Selects') {
+                      filters.each(function () {
+
+                          var filter = $(this);
+                          var taxonomy = filter.data('tax');
+                          var term = filter.val();
+
+                          if (!taxonomy || !term || '...' === term) {
+                              return;
+                          }
+
+                          filter_string += '.' + taxonomy + '-' + term;
+                      });
+                    } else {
 
                         var filter = $(this);
                         var taxonomy = filter.data('tax');
@@ -126,10 +156,10 @@
                         }
 
                         filter_string += '.' + taxonomy + '-' + term;
-                    });
+
+                    }
 
                     if (filter_string.length) {
-                      console.log(filter_string);
                         tope.isotope({ filter: filter_string });
                     } else {
                         tope.isotope({ filter: '*' });
@@ -142,6 +172,7 @@
 
                     return false;
                 });
+
             }
         }
     });

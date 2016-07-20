@@ -22,7 +22,9 @@ ul.menu {
   width: 100%;
   display: flex;
   align-items: center;
-  z-index: 10;
+  z-index: 99;
+  position: relative;
+
   @include breakpoint(large) {
     display: none !important;
   }
@@ -58,7 +60,9 @@ ul.menu {
   flex-direction: row;
   background-color: $navbar-bg-color;
   width: 100%;
-  z-index: 10;
+  z-index: 98;
+  position: relative;
+
   @include breakpoint(medium down) {
     display: none;
   }

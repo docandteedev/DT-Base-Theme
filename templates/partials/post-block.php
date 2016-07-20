@@ -24,4 +24,21 @@ if ( !empty( $filter_taxonomies ) ) {
         <h3 class="post-title"><?= Titles\title(); ?></h3>
         <h6 class="post-date"><?php echo get_the_date(); ?></h6>
     </a>
+
+		<section class="post-block-content">
+			<div class="media-object stack-for-small">
+			  <div class="media-object-section image-section">
+			    <div class="thumbnail">
+						<img data-original="<?php echo $thumb_url; ?>" alt="post-image" class="post-image lazy"/>
+					</div>
+				</div>
+			<div class="media-object-section">
+				<a href="<?php the_permalink(); ?>"><h3 class="post-title"><?= Titles\title(); ?></h3></a>
+				<span class="post-date"><?php echo get_the_date(); ?></span>
+				<p class="post-excerpt">
+					<?php echo get_the_excerpt(); ?>
+				</p>
+			</div>
+		</section>
+
 </div>

@@ -44,6 +44,13 @@ if ( function_exists( 'get_field' ) ) {
 	unset( $tmp );
 }
 
+global $show_search;
+if ( function_exists( 'get_field' ) ) {
+	$tmp = get_field( 'archive_show_search' );
+	$show_search = ( !empty( $tmp ) ) ? $tmp : $show_map;
+	unset( $tmp );
+}
+
 ?>
 
 <div class="post-archive">
@@ -51,7 +58,16 @@ if ( function_exists( 'get_field' ) ) {
 		<?php while (have_posts()) : the_post(); ?>
 			<?php get_template_part('templates/page', 'header'); ?>
 			<?php get_template_part('templates/content', 'page'); ?>
-			<?php get_template_part("templates/partials/post-filterbar"); ?>
+
+			<?php if (get_field('archive_filter_type') == 'Term Checkboxes'): ?>
+				<?php get_template_part("templates/partials/post-filter-sidebar"); ?>
+			<?php else: ?>
+				<div class="content">
+					<?php get_template_part("templates/partials/post-filterbar"); ?>
+					<?php get_template_part("templates/partials/post-archive-search"); ?>
+				</div>
+			<?php endif; ?>
+
 			<?php get_template_part("templates/partials/post-map"); ?>
 			<?php get_template_part("templates/post-archive"); ?>
 		<?php endwhile; ?>

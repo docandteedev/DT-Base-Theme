@@ -5,9 +5,9 @@
     min-height: 250px;
     background-image: url('../images/grey-spinner.gif');
     background-position: center;
-    background-size: cover; 
+    background-size: cover;
     border: 15px solid white;
-    
+
     position: relative;
 
     @include breakpoint(small only) {
@@ -53,5 +53,65 @@
         }
 
     }
+
+
+    .post-block-content {
+      display: none;
+    }
+
+}
+
+.post-block-list {
+  @include grid-column(12);
+  background: none !important;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  min-height: 250px;
+
+  position: relative;
+
+  .media-object {
+    width: 100%;
+  }
+
+  .image-section {
+    max-width: 400px;
+    height: 220px;
+
+    .thumbnail {
+      height: 100%;
+      width: 100%;
+
+      img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: inherit;
+      }
+
+    }
+
+  }
+
+  .post-image {
+    max-width: 400px;
+    width: 100%;
+    overflow: hidden;
+    max-height: 200px;
+
+    .thumbnail {
+      display: flex;
+      align-items: center;
+    }
+
+  }
+
+  .post-block-inner {
+    display: none;
+  }
+
+  .post-block-content {
+    display: flex;
+  }
 
 }

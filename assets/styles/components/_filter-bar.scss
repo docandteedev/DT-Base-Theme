@@ -1,26 +1,69 @@
-.tax-filters {
+.filterbar {
+
+  .filter-buttons {
+    position: absolute;
+    right: 0;
+    top: 0;
     display: flex;
-    justify-content: space-between;
-    height: 40px;
+    align-items: center;
+    height: 20px;
 
-    label {
+      button {
+        background: $brand-primary;
+        &:hover {
+          background: lighten($brand-primary, 10%);
+        }
+      }
+
+  }
+
+  .top-bar-left {
+    position: relative;
+  }
+
+  .top-bar-right {
+    position: relative;
+  }
+
+  .tax-filters {
+      display: flex;
+      justify-content: space-between;
+      height: 40px;
+      @include grid-column(8 of 12);
+
+      .checkbox-filter {
+        align-self: center;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+      }
+
+      .checkbox-label {
         display: flex;
-        justify-content: space-between;
-        width: 275px;
+        align-items: center;
+        margin-left: 20px;
+      }
 
-        .filter-title {
-            width: 60px;
-            align-self: center;
-        }
+      label {
+          display: flex;
+          justify-content: space-between;
+          width: 275px;
 
-        #filter-category {
-            height: 100%;
-        }
+          .filter-title {
+              width: 60px;
+              align-self: center;
+          }
 
-        .filter-buttons {
-            margin-right: -17px;
-        }
+          #filter-category {
+              height: 100%;
+          }
 
-    }
+          .filter-buttons {
+              margin-right: -17px;
+          }
+
+      }
+
+  }
 
 }

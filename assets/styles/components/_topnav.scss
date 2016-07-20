@@ -4,7 +4,8 @@
   display: flex;
   align-items: center;
   width: 100%;
-  z-index: 10;
+  z-index: 99;
+  position: relative;
 
   @include breakpoint(medium down) {
     display: none;
@@ -22,7 +23,7 @@
     }
   }
 
-  .nav-topbar-search-form {
+  .search-form {
     margin-right: -10px;
     display: flex;
     height: 35px;

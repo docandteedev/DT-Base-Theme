@@ -2,6 +2,7 @@
 
 use Roots\Sage\Setup;
 use Roots\Sage\Wrapper;
+use Roots\Sage\Extras;
 
 ?>
 
@@ -15,14 +16,16 @@ use Roots\Sage\Wrapper;
       </div>
     <![endif]-->
     <?php
-      do_action('get_header');
-      get_template_part('templates/header');
+      if(Extras\display_header()) {
+         do_action('get_header');
+        get_template_part('templates/header');
+      }
     ?>
     <div class="wrap container <?php echo get_post_type() . '-container' ?>" role="document">
-        <main class="main">
+        <main class="main <?php echo (get_field(full_width_container)) ? "fullwidth" : "" ; ?>">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
-        <?php if (Setup\display_sidebar()) : ?>
+        <?php if (get_field('show_sidebar')) : ?>
           <aside class="sidebar">
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
@@ -33,6 +36,6 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/footer');
       wp_footer();
     ?>
+
   </body>
 </html>
-

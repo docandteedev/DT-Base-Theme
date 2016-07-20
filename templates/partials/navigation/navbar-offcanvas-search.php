@@ -5,7 +5,20 @@
   </button>
 
   <ul class="vertical menu" data-drilldown><!-- start of the drilldown multi level menu -->
-    <?php get_search_form(); ?>
+  
+    <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>" autocomplete="off">
+      <div class="input-group">
+        <input type="text" class="input-group-field search-field" value="" name="s" id="s" placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>" data-search-type="">
+      </div>
+    </form>
+
+    <div class="search-results">
+      <span>Seach Results:</span>
+      <ul class="search-results-list">
+          
+      </ul>
+    </div>
+
   </ul>
 
 </div>
