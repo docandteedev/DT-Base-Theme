@@ -171,6 +171,7 @@ if (function_exists("register_field_group")) {
                                         'label' => 'Post ID',
                                         'name' => 'repeatable_block_post_id',
                                         'type' => 'post_object',
+                                        'save_format' => 'id',
                                          'conditional_logic' => array(
                                             array(
                                                 array(

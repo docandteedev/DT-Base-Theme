@@ -6,8 +6,6 @@
 
     <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
     <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-    <i class="fa fa-volume-off mute-slider-toggle mute-slider-icon" aria-hidden="true"></i>
-    <i class="fa fa-volume-up mute-slider-toggle unmute-slider-icon" aria-hidden="true"></i>
 
     <?php foreach($slides as $slide): ?>
       <?php if ($slide[slide_background] == "Image"): ?>
@@ -24,7 +22,7 @@
 
       <?php elseif ($slide[slide_background] == "Video"): ?>
 
-        <li class="orbit-slide slide video-slide" data-vide-bg="<?php echo $slide[video_background]; ?>" data-vide-options="loop: true, muted: false, position: 50% 50%">
+        <li class="orbit-slide slide video-bg video-slide" data-video-bg="<?php echo $slide[video_background]; ?>">
           <figcaption class="orbit-caption">
             <div class="caption-inner">
               <h2 class="slide-title"><?php echo $slide[slide_title]; ?></h2>
@@ -32,6 +30,12 @@
             </div>
           </figcaption>
         </li>
+
+        <i class="fa fa-play play-video video-control-toggle" aria-hidden="true"></i>
+        <i class="fa fa-pause pause-video video-control-toggle" aria-hidden="true"></i>
+
+        <i class="fa fa-volume-off mute-slider-toggle mute-slider-icon" aria-hidden="true"></i>
+        <i class="fa fa-volume-up mute-slider-toggle unmute-slider-icon" aria-hidden="true"></i>
 
       <?php else: ?>
 

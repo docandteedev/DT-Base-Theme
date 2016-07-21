@@ -1,6 +1,7 @@
-<?php $query = new WP_Query(array(  
+<?php 
+$query = new WP_Query(array(  
     'post_type' => 'any',  
-    'p' => $repeatable_block[repeatable_block_post_id]
+    'p' => $repeatable_block[repeatable_block_post_id]->ID
 )); ?>
 
 <?php if($query->have_posts()): while($query->have_posts()): $query->the_post(); ?>
@@ -21,4 +22,4 @@
             <a class="hover-block-link" href="<?php the_permalink(); ?>"><i class="fa fa-external-link" aria-hidden="true"></i></a>
         </div>
     </div>
-<?php wp_reset_postdata(); endwhile; endif; ?>    
+<?php endwhile; endif; ?>    
