@@ -6,6 +6,12 @@ module.exports = {
     path: path.join(__dirname, 'dist/scripts'),
     filename: 'bundle.js'
   },
+  resolve: {
+    alias: {
+      'masonry': 'masonry-layout',
+      'isotope': 'isotope-layout'
+    }
+  },
   devtool: 'inline-source-map',
   module: {
     loaders: [

@@ -1,97 +1,51 @@
-{
-  "name": "sage",
-  "homepage": "https://roots.io/sage/",
-  "authors": [
-    "Ben Word <ben@benword.com>"
-  ],
-  "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "foundation-sites": "6.2.3",
-    "webfontloader": "^1.6.24",
-    "animatewithsass": "^3.2.2",
-    "aos": "^2.0.4",
-    "df-visible": "jquery-visible#^1.2.0",
-    "jquery_lazyload": "^1.9.1",
-    "isotope": "^3.0.1",
-    "wow": "wowjs#^1.1.2",
-    "animate.css": "^3.5.2",
-    "google-maps": "^3.2.1",
-    "lightbox2": "^2.8.2",
-    "motion-ui": "^1.2.2",
-    "video.js": "^5.10.7",
-    "fancyBox": "^2.1.5",
-    "vide": "^0.5.0",
-    "featherlight": "^1.5.0",
-    "rxjs": "^4.1.0"
-  },
-  "overrides": {
-    "foundation-sites": {
-      "main": [
-        "./scss/foundation.scss",
-        "./dist/foundation.js",
-        "./dist/plugins/foundation.interchange.js",
-        "./dist/plugins/foundation.util.mediaQuery.js",
-        "./dist/plugins/foundation.sticky.js",
-        "./dist/plugins/foundation.util.timerAndImageLoader.js"
-      ]
-    },
-    "animatewithsass": {
-      "main": [
-        "./animate.scss"
-      ]
-    },
-    "jquery_lazyload": {
-      "main": [
-        "./jquery.lazyload.js"
-      ]
-    },
-    "isotope": {
-      "main": [
-        "./dist/isotope.pkgd.min.js"
-      ]
-    },
-    "wow": {
-      "main": [
-        "./dist/wow.min.js"
-      ]
-    },
-    "google-maps": {
-      "main": [
-        "./lib/Google.js"
-      ]
-    },
-    "motion-ui": {
-      "main": [
-        "./src/motion-ui.scss"
-      ]
-    },
-    "video.js": {
-      "main": [
-        "./dist/video.js",
-        "./src/css/video-js.scss"
-      ]
-    },
-    "fancyBox": {
-      "main": [
-        "./source/jquery.fancybox.pack.js"
-      ]
-    },
-    "vide": {
-      "main": [
-        "./dist/jquery.vide.js"
-      ]
-    },
-    "featherlight": {
-      "main": [
-        "./release/featherlight.min.js",
-        "./release/featherlight.gallery.min.js"
-      ]
-    },
-    "rxjs": {
-      "main": [
-        "./dist/rx.all.js"
-      ]
+    {
+      "name": "sage",
+      "homepage": "https://roots.io/sage/",
+      "authors": [
+        "Ben Word <ben@benword.com>"
+      ],
+      "license": "MIT",
+      "private": true,
+      "dependencies": {
+        "foundation-sites": "6.2.3",
+        "webfontloader": "^1.6.24",
+        "animatewithsass": "^3.2.2",
+        "aos": "^2.0.4",
+        "df-visible": "jquery-visible#^1.2.0",
+        "jquery_lazyload": "^1.9.1",
+        "isotope": "^3.0.1",
+        "wow": "wowjs#^1.1.2",
+        "animate.css": "^3.5.2",
+        "google-maps": "^3.2.1",
+        "lightbox2": "^2.8.2",
+        "motion-ui": "^1.2.2",
+        "video.js": "^5.10.7",
+        "fancyBox": "^2.1.5",
+        "vide": "^0.5.0",
+        "featherlight": "^1.5.0",
+        "rxjs": "^4.1.0",
+        "formstone": "^1.2.0"
+      },
+      "overrides": {
+        "foundation-sites": {
+          "main": [
+            "./scss/foundation.scss",
+            "./dist/foundation.js",
+            "./dist/plugins/foundation.interchange.js",
+            "./dist/plugins/foundation.util.mediaQuery.js",
+            "./dist/plugins/foundation.sticky.js",
+            "./dist/plugins/foundation.util.timerAndImageLoader.js"
+          ]
+        },
+        "jquery_lazyload": {
+          "main": [
+            "./jquery.lazyload.js"
+          ]
+        },
+        "formstone" : {
+          "main": [
+            "./dist/css/background.css"
+          ]
+        }
+      }
     }
-  }
-}

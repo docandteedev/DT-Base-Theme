@@ -5,15 +5,11 @@
 // bower:scss
 @import "../../bower_components/foundation-sites/scss/foundation.scss";
 @import "../../bower_components/animatewithsass/animate.scss";
-@import "../../bower_components/motion-ui/src/motion-ui.scss";
-@import "../../bower_components/video.js/src/css/video-js.scss";
 // endbower
 
+@import "./../bower_components/formstone/dist/css/background.css";
 
 @import "node_modules/font-awesome/scss/font-awesome";
-@import "bower_components/featherlight/release/featherlight.min.css";
-// @import "bower_components/featherlight/release/featherlight.gallery.min.css";
-
 
 // Import foundation with FlexBox mode set to true
 @include foundation-everything(true);

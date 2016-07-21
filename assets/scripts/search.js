@@ -1,5 +1,7 @@
-(function (global, $, Rx) {
+import Rx from 'rx'
+import $ from 'jquery' 
 
+const initSearch = () => {
   // Page Search
   $('.search-form').each(function(){
     // Search Wordpress for a given term
@@ -134,4 +136,6 @@
     $(main);
   });
 
-}(window, jQuery, Rx));
+}
+
+export default initSearch

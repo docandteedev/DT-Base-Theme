@@ -1,17 +1,25 @@
-(function ($) {
+import $ from 'jquery'
+import Isotope from 'isotope'
+import GoogleMapsLoader from 'google-maps'
+import jQueryBridget from 'jquery-bridget'
 
-    $('.post-map').each(function () {
-        var key = $('.post-map').data('map-key');
+// make Isotope a jQuery plugin
+jQueryBridget('isotope', Isotope, $);
+
+const initTope = () => {
+
+    $('.post-map').each(() => {
+        const key = $('.post-map').data('map-key');
         GoogleMapsLoader.KEY = key;
 
-        var map;
-        var goog;
+        let map;
+        let goog;
 
-        GoogleMapsLoader.load(function (google, map) {
+        GoogleMapsLoader.load((google, map) => {
 
             goog = google;
 
-            var myLatLng = { lat: 55.3781, lng: 3.4360 };
+            const myLatLng = { lat: 55.3781, lng: 3.4360 };
             $('.post-map').data('hidden', false);
 
             map = new google.maps.Map($('.post-map')[0], {
@@ -19,24 +27,24 @@
                 center: myLatLng
             });
 
-            function clearMarkers() {
-                console.log("Heloo");
+            const clearMarkers = () => {
+                console.log('cleared')
             }
 
-            function loadMarkers() {
+            const loadMarkers = () => {
                 clearMarkers();
-                var posts = $('.isotope').isotope('getFilteredItemElements');
+                const posts = $('.isotope').isotope('getFilteredItemElements');
                 $(posts).each(function () {
 
-                    var LatLng = {
+                    const LatLng = {
                         lat: parseInt($(this).data('lat')),
                         lng: parseInt($(this).data('lng'))
                     };
 
-                    var marker = new google.maps.Marker({
+                    const marker = new google.maps.Marker({
                         position: LatLng,
-                        map: map,
-                        drop: true,
+                        map,
+                        animation: google.maps.Animation.DROP,
                         title: $(this).data('title')
                     });
                     console.log("Google Maps Markers Loaded ok");
@@ -46,9 +54,9 @@
             loadMarkers();
         });
 
-        $('#toggle-map').click(function () {
-            var map = $('.post-map');
-            var toggle = $('#toggle-map');
+        $('#toggle-map').click(() => {
+            const map = $('.post-map');
+            const toggle = $('#toggle-map');
             if (map.data('hidden')) {
                 map.data('hidden', false);
                 map.fadeIn();
@@ -62,11 +70,11 @@
     $('.isotope').each(function () {
         /* To use isotope: <div class="isotope" data-itemselector=".box" data-colwidth=".col-width" data-filters="#tope1-filters" data-filters-reset="#tope1-reset"> */
 
-        var tope = $(this);
-        var filters = tope.data('filters');
-        var filters_reset = tope.data('filters-reset');
-        var filter_type = tope.data('filter-type');
-        var doing_filtering = false;
+        const tope = $(this);
+        let filters = tope.data('filters');
+        const filters_reset = tope.data('filters-reset');
+        const filter_type = tope.data('filter-type');
+        let doing_filtering = false;
 
         if (tope.length) {
 
@@ -80,25 +88,25 @@
             });
 
 
-            $('#list-view-toggle').click(function(){
-              $('.post-block').addClass('post-block-list');
-              $('.post-block').removeClass('post-block');
-              tope.isotope({
-                layoutMode: 'vertical'
-              });
+            $('#list-view-toggle').click(() => {
+                $('.post-block').addClass('post-block-list');
+                $('.post-block').removeClass('post-block');
+                tope.isotope({
+                    layoutMode: 'vertical'
+                });
             });
 
-            $('#grid-view-toggle').click(function(){
-              $('.post-block-list').addClass('post-block');
-              $('.post-block-list').removeClass('post-block-list');
-              tope.isotope({
-                layoutMode: 'masonry'
-              });
+            $('#grid-view-toggle').click(() => {
+                $('.post-block-list').addClass('post-block');
+                $('.post-block-list').removeClass('post-block-list');
+                tope.isotope({
+                    layoutMode: 'masonry'
+                });
             });
 
             if ('undefined' !== typeof filters_reset && filters_reset.length) {
-                var tope_reset = $(filters_reset);
-                tope_reset.click(function () {
+                const tope_reset = $(filters_reset);
+                tope_reset.click(() => {
 
                     if (doing_filtering) {
                         return false;
@@ -111,7 +119,7 @@
                     doing_filtering = false;
 
                     filters.each(function () {
-                        var filter = $(this);
+                        const filter = $(this);
                     });
 
                     return false;
@@ -119,7 +127,7 @@
             }
 
             if ('undefined' !== typeof filters && filters.length) {
-                var tope_filters = $(filters);
+                const tope_filters = $(filters);
 
                 tope_filters.change(function () {
 
@@ -130,32 +138,32 @@
 
                     filters.attr('disabled', 'disabled');
 
-                    var filter_string = '';
+                    let filter_string = '';
 
-                    if(filter_type === 'Tax Selects') {
-                      filters.each(function () {
+                    if (filter_type === 'Tax Selects') {
+                        filters.each(function () {
 
-                          var filter = $(this);
-                          var taxonomy = filter.data('tax');
-                          var term = filter.val();
+                            const filter = $(this);
+                            const taxonomy = filter.data('tax');
+                            const term = filter.val();
 
-                          if (!taxonomy || !term || '...' === term) {
-                              return;
-                          }
+                            if (!taxonomy || !term || '...' === term) {
+                                return;
+                            }
 
-                          filter_string += '.' + taxonomy + '-' + term;
-                      });
+                            filter_string += `.${taxonomy}-${term}`;
+                        });
                     } else {
 
-                        var filter = $(this);
-                        var taxonomy = filter.data('tax');
-                        var term = filter.val();
+                        const filter = $(this);
+                        const taxonomy = filter.data('tax');
+                        const term = filter.val();
 
                         if (!taxonomy || !term || '...' === term) {
                             return;
                         }
 
-                        filter_string += '.' + taxonomy + '-' + term;
+                        filter_string += `.${taxonomy}-${term}`;
 
                     }
 
@@ -176,4 +184,6 @@
             }
         }
     });
-})(jQuery); // Fully reference jQuery after this point.
+}
+
+export default initTope

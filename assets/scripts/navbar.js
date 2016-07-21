@@ -57,3 +57,5 @@ const initNav = () => {
 
   });
 }
+
+export default initNav

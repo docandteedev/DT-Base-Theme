@@ -1,11 +1,9 @@
 {
   "dependencies": {
     "main.js": {
-      "bower": ["foundation-sites", "webfontloader", "wow", "jquery_lazyload", "isotope", "google-maps", "video.js", "vide", "featherlight", "rxjs"],
+      "bower": ["foundation-sites", "jquery_lazyload"],
       "files": [
-        "scripts/main.js",
-        "scripts/isotope.js",
-        "scripts/search.js"
+        "scripts/main.js"
       ],
       "main": true
     },

@@ -63,7 +63,12 @@
     "wiredep": "^2.2.2"
   },
   "dependencies": {
+    "bower": "^1.7.9",
+    "google-maps": "^3.2.1",
+    "isotope-layout": "^3.0.1",
+    "jquery-bridget": "^2.0.1",
     "jquery-lazyload": "^1.9.7",
+    "lazyload": "^1.8.4",
     "videojs-font": "^2.0.0",
     "webfontloader": "^1.6.26",
     "wow.js": "^1.2.0"
