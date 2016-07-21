@@ -1,20 +1,19 @@
 {
-  "name": "sage",
-  "version": "8.4.0",
-  "author": "Ben Word <ben@benword.com>",
+  "name": "DT BASE THEME",
+  "version": "9.0.0",
+  "author": "Nathan Horrian <nathan_horrigan@icloud.com>",
   "homepage": "https://roots.io/sage/",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/roots/sage.git"
+    "url": "git://github.com/docandteedev/DT-Base-Theme.git"
   },
   "bugs": {
     "url": "https://github.com/roots/sage/issues"
   },
   "licenses": [
     {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
+      "type": "Commercial"
     }
   ],
   "scripts": {
