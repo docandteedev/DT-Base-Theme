@@ -1,20 +1,13 @@
-<header>
-  <div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle></button>
-    <div class="title-bar-title">Menu</div>
-  </div>
-  <div class="top-bar" id="top-menu">
-    <div class="top-bar-left">
-        <ul class="menu">
-          <li class="home"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo('name'); ?></a></li>
-        </ul>
-    </div>
-    <div class="top-bar-right">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <?php if (has_nav_menu('primary_navigation')) :?>
-          <?php wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'container' => '', 'items_wrap' => '%3$s', 'walker' => new Roots\Sage\Extras\Foundation_Nav_Menu()]);?>
-        <?php endif;?>
-      </ul>
-    </div>
-  </div>
-</header>
+<div class="off-canvas-wrapper" id="smooth-state-container">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <?php get_template_part('templates/partials/navigation/navbar-offcanvas-menu'); ?>
+      <?php get_template_part('templates/partials/navigation/navbar-offcanvas-search'); ?>
+      <div class="off-canvas-content" data-off-canvas-content>
+          <header data-sticky-container>
+       
+            <?php get_template_part("templates/partials/navigation/navbar-titlebar") ?>
+            <div class="sticky" data-sticky data-margin-top="0" style="width:100%;">    
+                <?php get_template_part("templates/partials/navigation/navbar-topnav"); ?>  
+                <?php get_template_part("templates/partials/navigation/navbar-" . get_option("navbar_type")); ?>
+            </div>      
+          </header>

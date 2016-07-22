@@ -7,7 +7,7 @@
  *
  * .noConflict()
  * The routing is enclosed within an anonymous function so that you can
- * always reference jQuery with $, even when in .noConflict() mode.
+ * always reference jquery with $, even when in .noConflict() mode.
  * ======================================================================== */
 
 (function($) {
@@ -19,18 +19,21 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
-
-        $(document).foundation(); // Foundation JavaScript
-        
+        $(document).foundation();
+        // Lazy Loading
+        $(".lazy").lazyload({
+          threshold : 6
+        });
       },
       finalize: function() {
-        // JavaScript to be fired on all pages, after page specific JS is fired
+
       }
     },
     // Home page
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
+        
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

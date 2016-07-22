@@ -1,9 +1,14 @@
-<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+<form role="search" class="search-form" autocomplete="off">
 	<div class="input-group">
-		<input type="text" class="input-group-field" value="" name="s" id="s" placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>">
-		<div class="input-group-button">
-      <input type="submit" class="search-submit"
-          value="<?php echo esc_attr_x( 'Search', 'submit button' ) ?>" />
-		</div>
+		<input type="text" class="input-group-field search-field" value="" name="s" id="s" placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>" data-search-type="">
+		<button type="submit" name="button" class="button search-submit">
+			<i class="fa fa-search search-icon" type="button"  aria-hidden="true"></i>
+		</button>
 	</div>
 </form>
+<div class="search-results">
+	<span>Seach Results:</span>
+	<ul class="search-results-list">
+
+	</ul>
+</div>

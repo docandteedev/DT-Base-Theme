@@ -16,13 +16,24 @@ function body_class($classes) {
   }
 
   // Add class if sidebar is active
-  if (Setup\display_sidebar()) {
+  if (get_field('show_sidebar')) {
     $classes[] = 'sidebar-primary';
   }
 
   return $classes;
 }
 add_filter('body_class', __NAMESPACE__ . '\\body_class');
+
+function display_header() {
+  static $display;
+
+  isset($display) || $display = !in_array(true, [
+    // The header will NOT be displayed if ANY of the following return true.
+    // @link https://codex.wordpress.org/Conditional_Tags
+    is_404()
+  ]);
+  return $display;
+}
 
 /**
  * Clean up the_excerpt()

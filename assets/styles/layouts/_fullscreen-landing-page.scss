@@ -1,0 +1,42 @@
+.page-template-template-page-fullscreen-landing {
+
+  .small-nav-bar {
+    display: none;
+  }
+
+  .navbar-topnav {
+    display: none;
+  }
+
+  .large-nav-bar {
+    background-color: transparent !important;
+  }
+
+  .large-nav-bar-lower {
+    display: none;
+  }
+
+  .landing-page {
+    height: 100vh;
+    width: 100vw;
+    margin-left: -15px;
+  }
+
+  .page-header .page-header-inner .entry-title {
+    background-color: rgba(255,255,255,.65) !important;
+    color: black !important;
+  }
+
+  .page-header .page-header-inner  .meta {
+    background-color: rgba(255,255,255,.65) !important;
+    color: black !important;
+  }
+
+  .entry-content {
+    background-color: rgba(255,255,255,.65);
+    color: black;
+    @include grid-column(10);
+    @include grid-column-position(center);
+  }
+
+}

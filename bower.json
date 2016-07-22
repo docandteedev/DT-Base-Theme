@@ -1,23 +1,40 @@
-{
-  "name": "sage",
-  "homepage": "https://roots.io/sage/",
-  "authors": [
-    "Ben Word <ben@benword.com>"
-  ],
-  "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "foundation-sites": "6.2.3"
-  },
-  "overrides": {
-    "foundation-sites": {
-      "main": [
-
-        "./scss/foundation.scss",
-
-        "./dist/foundation.js"
-
-      ]
+    {
+      "name": "sage",
+      "homepage": "https://roots.io/sage/",
+      "authors": [
+        "Nathan Horrigan <Nathan_Horrigan@icloud.com>"
+      ],
+      "license": "MIT",
+      "private": true,
+      "dependencies": {
+        "foundation-sites": "6.2.3",
+        "animatewithsass": "^3.2.2",
+        "jquery_lazyload": "^1.9.1",
+        "animate.css": "^3.5.2",
+        "motion-ui": "^1.2.2",
+        "featherlight": "^1.5.0",
+        "formstone": "^1.2.0"
+      },
+      "overrides": {
+        "foundation-sites": {
+          "main": [
+            "./scss/foundation.scss",
+            "./dist/foundation.js",
+            "./dist/plugins/foundation.interchange.js",
+            "./dist/plugins/foundation.util.mediaQuery.js",
+            "./dist/plugins/foundation.sticky.js",
+            "./dist/plugins/foundation.util.timerAndImageLoader.js"
+          ]
+        },
+        "jquery_lazyload": {
+          "main": [
+            "./jquery.lazyload.js"
+          ]
+        },
+        "formstone" : {
+          "main": [
+            "./dist/css/background.css"
+          ]
+        }
+      }
     }
-  }
-}

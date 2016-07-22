@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "main.js": {
+      "bower": ["foundation-sites", "jquery_lazyload"],
       "files": [
         "scripts/main.js"
       ],
@@ -22,6 +23,6 @@
     }
   },
   "config": {
-    "devUrl": "https://base.dev"
+    "devUrl": "http://localhost:8000"
   }
 }
