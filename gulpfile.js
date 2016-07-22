@@ -10,7 +10,6 @@ var gulpif       = require('gulp-if');
 var imagemin     = require('gulp-imagemin');
 var jshint       = require('gulp-jshint');
 var lazypipe     = require('lazypipe');
-var less         = require('gulp-less');
 var merge        = require('merge-stream');
 var minifyCss    = require('gulp-minify-css');
 var plumber      = require('gulp-plumber');
@@ -269,7 +268,7 @@ gulp.task('build', function(callback) {
 });
 
 // ### Wiredep
-// `gulp wiredep` - Automatically inject Less and Sass Bower dependencies. See
+// `gulp wiredep` - Automatically inject Sass Bower dependencies. See
 // https://github.com/taptapship/wiredep
 gulp.task('wiredep', function() {
   var wiredep = require('wiredep').stream;
