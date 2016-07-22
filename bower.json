@@ -8,22 +8,11 @@
       "private": true,
       "dependencies": {
         "foundation-sites": "6.2.3",
-        "webfontloader": "^1.6.24",
         "animatewithsass": "^3.2.2",
-        "aos": "^2.0.4",
-        "df-visible": "jquery-visible#^1.2.0",
         "jquery_lazyload": "^1.9.1",
-        "isotope": "^3.0.1",
-        "wow": "wowjs#^1.1.2",
         "animate.css": "^3.5.2",
-        "google-maps": "^3.2.1",
-        "lightbox2": "^2.8.2",
         "motion-ui": "^1.2.2",
-        "video.js": "^5.10.7",
-        "fancyBox": "^2.1.5",
-        "vide": "^0.5.0",
         "featherlight": "^1.5.0",
-        "rxjs": "^4.1.0",
         "formstone": "^1.2.0"
       },
       "overrides": {
