@@ -10,34 +10,34 @@ import initNav from './navbar'
 
 const init = () => {
 
-  // Fonts
-  WebFont.load({
-    google: {
-      families: ['Montserrat']
-    }
-  });
+    // Fonts
+    WebFont.load({
+        google: {
+            families: ['Montserrat']
+        }
+    });
 
-  initTope()
+    initTope()
 
-  // Init nav height change
-  initNav()
+    // Init nav height change
+    initNav()
 
-  initVideoBg()
+    initVideoBg()
 
-  // featherlight lightbox
-  // $('.gallery').featherlightGallery();
+    // featherlight lightbox
+    // $('.gallery').featherlightGallery();
 
-  initSearch()
+    initSearch()
 
-  // Animations
-  new WOW().init();
+    // Animations
+    new WOW().init();
 
-  // Site title
-  // wp.customize('blogname', function(value) {
-  //   value.bind(function(to) {
-  //     $('.brand').text(to);
-  //   });
-  // });
+    // Site title
+    // wp.customize('blogname', function(value) {
+    //   value.bind(function(to) {
+    //     $('.brand').text(to);
+    //   });
+    // });
 
 }
 

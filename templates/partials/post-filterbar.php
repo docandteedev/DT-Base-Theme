@@ -11,9 +11,9 @@ if (!empty($filter_taxonomies)) : ?>
           <ul class="dropdown menu" data-dropdown-menu>
               <li class="menu-text">Filter:</li>
               <li class="tax-filters">
-                  <?php foreach ($filter_taxonomies as $tax) :
+                    <?php foreach ($filter_taxonomies as $tax) :
                                   $tax = get_taxonomy(trim($tax));
-                    if (false === $tax) { continue; } ?>
+                        if (false === $tax) { continue; } ?>
 
                     <?php if (get_field('archive_filter_type') == 'Tax Selects') : ?>
                       <label>
@@ -24,20 +24,20 @@ if (!empty($filter_taxonomies)) : ?>
                           </span>
                               <select id="filter-<?php echo $tax->name; ?>" name="filter-<?php echo $tax->name; ?>" class="filter-dropdown tax-filter select-filter" data-tax="<?php echo $tax->name; ?>">
                               <option value="...">Please select...</option>
-                              <?php $terms = get_terms($tax->name, array(  ));
-                              foreach ($terms as $term) :
-                                  echo '<option value="' . $term->slug  . '">' . $term->name . '</option>';
+                                <?php $terms = get_terms($tax->name, array(  ));
+                                foreach ($terms as $term) :
+                                    echo '<option value="' . $term->slug  . '">' . $term->name . '</option>';
                               endforeach; ?>
                       </select>
                       </label>
                     <?php else : ?>
-                      <?php $terms = get_terms($tax->name, array(  )); ?>
-                      <?php foreach ($terms as $term) : ?>
+                        <?php $terms = get_terms($tax->name, array(  )); ?>
+                        <?php foreach ($terms as $term) : ?>
                         <button class="button tax-filter button-filter" value="<?php echo $term->slug; ?>" data-tax="<?php echo $tax->name; ?>"><?php echo $term->name; ?></button>
-                      <?php endforeach; ?>
+                        <?php endforeach; ?>
 
                     <?php endif; ?>
-                  <?php endforeach; ?>
+                    <?php endforeach; ?>
 
               </li>
           </ul>

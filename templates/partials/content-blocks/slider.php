@@ -9,7 +9,7 @@
     <?php endif; ?>
 
     <?php foreach ($slides as $slide) : ?>
-      <?php if ($slide[slide_background] == "Image") : ?>
+        <?php if ($slide[slide_background] == "Image") : ?>
 
         <li class="orbit-slide slide image-slide lazy" data-original="<?php echo $slide[image_background]; ?>">
           <figcaption class="orbit-caption">
@@ -20,7 +20,7 @@
           </figcaption>
         </li>
 
-      <?php elseif ($slide[slide_background] == "Video") : ?>
+        <?php elseif ($slide[slide_background] == "Video") : ?>
 
         <li class="orbit-slide slide background video-slide" data-video="<?php echo $slide[video_background]; ?>">
           <figcaption class="orbit-caption">
@@ -37,7 +37,7 @@
         <i class="fa fa-volume-off mute-slider-toggle mute-slider-icon" aria-hidden="true"></i>
         <i class="fa fa-volume-up mute-slider-toggle unmute-slider-icon" aria-hidden="true"></i>
 
-      <?php else : ?>
+        <?php else : ?>
 
         <li class="orbit-slide slide color-slide" style="background-color: <?php echo $slide[color_background]; ?>">
           <figcaption class="orbit-caption">
@@ -48,7 +48,7 @@
           </figcaption>
         </li>
 
-      <?php endif; ?>
+        <?php endif; ?>
     <?php endforeach; ?>
 
   </ul>

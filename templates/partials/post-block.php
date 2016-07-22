@@ -6,15 +6,15 @@ $thumb_url = $thumb_url_array[0];
 
 global $filter_taxonomies;
 if (!empty($filter_taxonomies)) {
-  foreach ($filter_taxonomies as $tax) {
-    $terms = get_the_terms($id, $tax);
-    if (!empty($terms)) {
-      foreach ($terms as $term) {
-        $extra_classes[] = $tax . '-' . $term->slug;
-      }
+    foreach ($filter_taxonomies as $tax) {
+        $terms = get_the_terms($id, $tax);
+        if (!empty($terms)) {
+            foreach ($terms as $term) {
+                $extra_classes[] = $tax . '-' . $term->slug;
+            }
+        }
+        unset($terms);
     }
-    unset($terms);
-  }
 }
 
 ?>

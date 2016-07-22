@@ -22,12 +22,12 @@ $query = new WP_Query(array (
 global $filter_taxonomies;
 $filter_taxonomies = array();
 if (function_exists('have_rows') && have_rows('archive_filter_taxonomies')) {
-  while (have_rows('archive_filter_taxonomies')) { the_row();
-    if ($tmp = get_sub_field('taxonomy')) {
-      $filter_taxonomies[] = $tmp;
+    while (have_rows('archive_filter_taxonomies')) { the_row();
+        if ($tmp = get_sub_field('taxonomy')) {
+            $filter_taxonomies[] = $tmp;
+        }
+        unset($tmp);
     }
-    unset($tmp);
-  }
 }
 
 global $filter_type;
