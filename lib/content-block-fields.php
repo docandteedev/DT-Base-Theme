@@ -134,7 +134,7 @@ if (function_exists("register_field_group")) {
                                 'label' => 'Repeatable Blocks',
                                 'name' => 'repeatable_blocks',
                                 'type' => 'repeater',
-								'layout' => 'row',
+                                'layout' => 'row',
                                 'sub_fields' => array(
                                     array(
                                         'key' => 'field_56f3f29dsknxjd080',
@@ -143,9 +143,9 @@ if (function_exists("register_field_group")) {
                                         'type' => 'select',
                                         'toolbar' => 'full',
                                         'choices' => array(
-											'simple' => 'Simple Content Block',
+                                            'simple' => 'Simple Content Block',
                                             'post-hover' => 'Post Hover Block'
-										)
+                                        )
                                     ),
                                     array(
                                         'key' => 'field_56f3f29jbdcjd080',

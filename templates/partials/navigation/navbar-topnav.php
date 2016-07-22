@@ -1,4 +1,4 @@
-<?php if (has_nav_menu('topnav_menu')): ?>
+<?php if (has_nav_menu('topnav_menu')) : ?>
   <div class="top-bar navbar-topnav">
       <div class="top-bar-left">
         <ul class="menu">

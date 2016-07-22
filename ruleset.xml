@@ -9,6 +9,13 @@
     <exclude name="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
     <exclude name="Squiz.WhiteSpace.ScopeClosingBrace"/>
 
+    <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace"/>
+    
+    <exclude name="Squiz.Scope.MethodScope.Missing"/>
+
+    <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/>
+    <exclude name="Squiz.Classes.ValidClassName.NotCamelCaps"/>
+
     <!-- Disable newline after opening brace -->
     <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace"/>
 

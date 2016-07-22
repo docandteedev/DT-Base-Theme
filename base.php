@@ -16,10 +16,10 @@ use Roots\Sage\Extras;
       </div>
     <![endif]-->
     <?php
-      if(Extras\display_header()) {
-         do_action('get_header');
-        get_template_part('templates/header');
-      }
+    if (Extras\display_header()) {
+      do_action('get_header');
+      get_template_part('templates/header');
+    }
     ?>
     <div class="wrap container <?php echo get_post_type() . '-container' ?>" role="document">
         <main class="main <?php echo (get_field(full_width_container)) ? "fullwidth" : "" ; ?>">

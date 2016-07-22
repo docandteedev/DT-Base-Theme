@@ -12,7 +12,7 @@
         <ul class="menu">
           <li class="home">
               <?php echo the_custom_logo(); ?>
-              <?php if (!has_custom_logo()): ?>
+              <?php if (!has_custom_logo()) : ?>
                 <h1><?php bloginfo('name'); ?></h1>
               <?php endif; ?>
           </li>

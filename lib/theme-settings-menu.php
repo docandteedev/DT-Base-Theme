@@ -51,7 +51,6 @@ function settings_customize_register($wp_customize)
       )
     )
   );
-
 }
 
 add_action('customize_register', __NAMESPACE__ . '\\settings_customize_register');

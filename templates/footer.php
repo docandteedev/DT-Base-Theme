@@ -3,7 +3,7 @@
           <?php dynamic_sidebar('sidebar-footer'); ?>
 
           <?php
-          register_sidebar( array(
+          register_sidebar(array(
             'name' => 'Footer Sidebar 1',
             'id' => 'footer-sidebar-1',
             'description' => 'Appears in the footer area',
@@ -14,7 +14,7 @@
           )); ?>
 
         </div>
-        <?php get_template_part( "templates/partials/dev-accred"); ?>
+        <?php get_template_part("templates/partials/dev-accred"); ?>
       </footer>
     </div>
   </div>

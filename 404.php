@@ -1,7 +1,7 @@
 <div class="error-404-page">
   <div class="error-404-site-logo">
     <?php echo the_custom_logo(); ?>
-    <?php if (!has_custom_logo()): ?>
+    <?php if (!has_custom_logo()) : ?>
       <h1><?php bloginfo('name'); ?></h1>
     <?php endif; ?>
   </div>
