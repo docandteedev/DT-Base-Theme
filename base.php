@@ -8,7 +8,7 @@ use Roots\Sage\Extras;
 
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
-  <?php get_template_part('templates/head'); ?>
+    <?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
     <!--[if IE]>
       <div class="alert alert-warning">
@@ -16,14 +16,14 @@ use Roots\Sage\Extras;
       </div>
     <![endif]-->
     <?php
-      if(Extras\display_header()) {
-         do_action('get_header');
+    if (Extras\display_header()) {
+        do_action('get_header');
         get_template_part('templates/header');
-      }
+    }
     ?>
     <div class="wrap container <?php echo get_post_type() . '-container' ?>" role="document">
         <main class="main <?php echo (get_field(full_width_container)) ? "fullwidth" : "" ; ?>">
-          <?php include Wrapper\template_path(); ?>
+            <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
         <?php if (get_field('show_sidebar')) : ?>
           <aside class="sidebar">

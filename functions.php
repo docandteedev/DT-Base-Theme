@@ -20,7 +20,6 @@ $sage_includes = [
   'lib/theme-settings-menu.php',  // The menu that allows user to set API keys etc...
   'lib/gallery-output.php',
   'lib/cpt.php',
-  'lib/post-types/sliders.php',
   'lib/social-widget.php',
   'lib/api-extension.php',
   'lib/protected-name.php',
@@ -28,10 +27,10 @@ $sage_includes = [
 ];
 
 foreach ($sage_includes as $file) {
-  if (!$filepath = locate_template($file)) {
-    trigger_error(sprintf(__('Error locating %s for inclusion', 'sage'), $file), E_USER_ERROR);
-  }
+    if (!$filepath = locate_template($file)) {
+        trigger_error(sprintf(__('Error locating %s for inclusion', 'sage'), $file), E_USER_ERROR);
+    }
 
-  require_once $filepath;
+    require_once $filepath;
 }
 unset($file, $filepath);

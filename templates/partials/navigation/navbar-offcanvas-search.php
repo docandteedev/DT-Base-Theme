@@ -6,9 +6,9 @@
 
   <ul class="vertical menu" data-drilldown><!-- start of the drilldown multi level menu -->
   
-    <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>" autocomplete="off">
+    <form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>" autocomplete="off">
       <div class="input-group">
-        <input type="text" class="input-group-field search-field" value="" name="s" id="s" placeholder="<?php echo esc_attr_x( 'Search …', 'placeholder' ) ?>" data-search-type="">
+        <input type="text" class="input-group-field search-field" value="" name="s" id="s" placeholder="<?php echo esc_attr_x('Search …', 'placeholder') ?>" data-search-type="">
       </div>
     </form>
 

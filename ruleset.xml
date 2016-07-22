@@ -9,6 +9,13 @@
     <exclude name="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
     <exclude name="Squiz.WhiteSpace.ScopeClosingBrace"/>
 
+    <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace"/>
+    
+    <exclude name="Squiz.Scope.MethodScope.Missing"/>
+
+    <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/>
+    <exclude name="Squiz.Classes.ValidClassName.NotCamelCaps"/>
+
     <!-- Disable newline after opening brace -->
     <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace"/>
 
@@ -38,8 +45,8 @@
   <!-- Force 2 spaces indentation -->
   <rule ref="Generic.WhiteSpace.ScopeIndent">
     <properties>
-      <property name="indent" value="2"/>
-      <property name="tabIndent" value="false"/>
+      <property name="indent" value="4"/>
+      <property name="tabIndent" value="true"/>
     </properties>
   </rule>
 

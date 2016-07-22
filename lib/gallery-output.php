@@ -9,8 +9,8 @@ function ct_post_gallery($output, $attr) {
 
     if (isset($attr['orderby'])) {
         $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
-        if (!$attr['orderby'])
-            unset($attr['orderby']);
+        if (!$attr['orderby']) {
+            unset($attr['orderby']); }
     }
 
     extract(shortcode_atts(array(
@@ -27,7 +27,7 @@ function ct_post_gallery($output, $attr) {
     ), $attr));
 
     $id = intval($id);
-    if ('RAND' == $order) $orderby = 'none';
+    if ('RAND' == $order) { $orderby = 'none'; }
 
     if (!empty($include)) {
         $include = preg_replace('/[^0-9,]+/', '', $include);
@@ -39,7 +39,7 @@ function ct_post_gallery($output, $attr) {
         }
     }
 
-    if (empty($attachments)) return '';
+    if (empty($attachments)) { return ''; }
 
     // Here's your actual output, you may customize it to your need
     $output = "<div class=\"gallery\">\n";
@@ -65,4 +65,4 @@ function ct_post_gallery($output, $attr) {
 
     return $output;
 }
-;?>
+;

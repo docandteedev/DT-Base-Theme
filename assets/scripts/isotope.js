@@ -19,7 +19,7 @@ const initTope = () => {
 
             goog = google;
 
-            const myLatLng = { lat: 55.3781, lng: 3.4360 };
+            const myLatLng = {lat: 55.3781, lng: 3.4360};
             $('.post-map').data('hidden', false);
 
             map = new google.maps.Map($('.post-map')[0], {
@@ -34,7 +34,7 @@ const initTope = () => {
             const loadMarkers = () => {
                 clearMarkers();
                 const posts = $('.isotope').isotope('getFilteredItemElements');
-                $(posts).each(function () {
+                $(posts).each(function() {
 
                     const LatLng = {
                         lat: parseInt($(this).data('lat')),
@@ -47,7 +47,7 @@ const initTope = () => {
                         animation: google.maps.Animation.DROP,
                         title: $(this).data('title')
                     });
-                    console.log("Google Maps Markers Loaded ok");
+                    console.log('Google Maps Markers Loaded ok');
                 });
             }
 
@@ -67,14 +67,14 @@ const initTope = () => {
         });
     });
 
-    $('.isotope').each(function () {
+    $('.isotope').each(function() {
         /* To use isotope: <div class="isotope" data-itemselector=".box" data-colwidth=".col-width" data-filters="#tope1-filters" data-filters-reset="#tope1-reset"> */
 
         const tope = $(this);
         let filters = tope.data('filters');
-        const filters_reset = tope.data('filters-reset');
-        const filter_type = tope.data('filter-type');
-        let doing_filtering = false;
+        const filtersReset = tope.data('filters-reset');
+        const filterType = tope.data('filter-type');
+        let doingFiltering = false;
 
         if (tope.length) {
 
@@ -86,7 +86,6 @@ const initTope = () => {
                 itemSelector: tope.data('itemselector'),
                 layoutMode: 'masonry'
             });
-
 
             $('#list-view-toggle').click(() => {
                 $('.post-block').addClass('post-block-list');
@@ -104,21 +103,21 @@ const initTope = () => {
                 });
             });
 
-            if ('undefined' !== typeof filters_reset && filters_reset.length) {
-                const tope_reset = $(filters_reset);
-                tope_reset.click(() => {
+            if ('undefined' !== typeof filtersReset && filtersReset.length) {
+                const topeReset = $(filtersReset);
+                topeReset.click(() => {
 
-                    if (doing_filtering) {
+                    if (doingFiltering) {
                         return false;
                     }
-                    doing_filtering = true;
+                    doingFiltering = true;
 
-                    tope.isotope({ filter: '*' });
+                    tope.isotope({filter: '*'});
                     filters.removeAttr('disabled');
                     $('body, html').scroll();
-                    doing_filtering = false;
+                    doingFiltering = false;
 
-                    filters.each(function () {
+                    filters.each(function() {
                         const filter = $(this);
                     });
 
@@ -127,21 +126,21 @@ const initTope = () => {
             }
 
             if ('undefined' !== typeof filters && filters.length) {
-                const tope_filters = $(filters);
+                const topeFilters = $(filters);
 
-                tope_filters.change(function () {
+                topeFilters.change(function() {
 
-                    if (doing_filtering) {
+                    if (doingFiltering) {
                         return false;
                     }
-                    doing_filtering = true;
+                    doingFiltering = true;
 
                     filters.attr('disabled', 'disabled');
 
-                    let filter_string = '';
+                    let filterString = '';
 
-                    if (filter_type === 'Tax Selects') {
-                        filters.each(function () {
+                    if (filterType === 'Tax Selects') {
+                        filters.each(function() {
 
                             const filter = $(this);
                             const taxonomy = filter.data('tax');
@@ -151,7 +150,7 @@ const initTope = () => {
                                 return;
                             }
 
-                            filter_string += `.${taxonomy}-${term}`;
+                            filterString += `.${taxonomy}-${term}`;
                         });
                     } else {
 
@@ -163,20 +162,20 @@ const initTope = () => {
                             return;
                         }
 
-                        filter_string += `.${taxonomy}-${term}`;
+                        filterString += `.${taxonomy}-${term}`;
 
                     }
 
-                    if (filter_string.length) {
-                        tope.isotope({ filter: filter_string });
+                    if (filterString.length) {
+                        tope.isotope({filter: filterString});
                     } else {
-                        tope.isotope({ filter: '*' });
+                        tope.isotope({filter: '*'});
                     }
 
                     filters.removeAttr('disabled');
 
                     $('body, html').scroll();
-                    doing_filtering = false;
+                    doingFiltering = false;
 
                     return false;
                 });
