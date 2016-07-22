@@ -22,6 +22,8 @@
     <!-- Allow multiple PHP statements in the same line (usually in template files) -->
     <exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine"/>
 
+    <exclude name="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" />
+
     <!-- Disable PSR-2 indentation rules that are buggy with 2 spaces -->
     <exclude name="PSR2.ControlStructures.SwitchDeclaration.BreakIndent"/>
     <exclude name="PSR2.Methods.FunctionCallSignature.Indent"/>
@@ -42,7 +44,7 @@
     <exclude-pattern>template-custom.php</exclude-pattern>
   </rule>
 
-  <!-- Force 2 spaces indentation -->
+  <!-- Force 4 spaces indentation -->
   <rule ref="Generic.WhiteSpace.ScopeIndent">
     <properties>
       <property name="indent" value="4"/>
