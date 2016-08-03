@@ -1,5 +1,8 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     // JS
-    "jscs.enable": true
+    "jscs.enable": true,
+
+    // PHP
+    "phpcs.standard": "./ruleset.xml"
 }
