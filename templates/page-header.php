@@ -11,7 +11,7 @@ $thumb_url = $thumb_url_array[0];
 <?php elseif (has_post_thumbnail()) : ?>
   <header class="page-header lazy" data-original="<?php echo $thumb_url; ?>">
       <div class="page-header-inner">
-          <h1 class="entry-title"><?= Titles\title(); ?></h1>
+          <h1 class="entry-title fadeInUp"><?= Titles\title(); ?></h1>
             <?php if (!is_page()) : ?>
             <div class="meta">
                 <?php get_template_part('templates/entry-meta'); ?>

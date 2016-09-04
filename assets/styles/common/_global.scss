@@ -1,5 +1,6 @@
 .content{
   margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 .fullwidth {
@@ -37,4 +38,13 @@ input:-webkit-autofill {
 
 .sticky {
   z-index: 20;
+}
+
+.main {
+  padding-bottom: 2rem !important;
+}
+
+
+.hide-on-load {
+  visibility: hidden;
 }

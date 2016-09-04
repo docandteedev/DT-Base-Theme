@@ -130,5 +130,22 @@ function settingsCustomizeRegister($wp_customize)
 			'type' => 'text'
 		)
 	);
+
+    $wp_customize->add_setting(
+        'youtube_url',
+        array(
+            'type' => 'option',
+        )
+    );
+
+    $wp_customize->add_control(
+        'youtube_url',
+        array(
+            'label' => 'Youtube Channel URL',
+            'section' => 'settings_section',
+            'type' => 'text'
+        )
+    );
+
 }
 add_action('customize_register', __NAMESPACE__ . '\\settingsCustomizeRegister');

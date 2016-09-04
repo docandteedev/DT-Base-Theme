@@ -1,10 +1,5 @@
 .large-nav-bar--logo-centered {
 
-  .navbar-container {
-    @include grid-row;
-    display: flex;
-  }
-
   .top-bar-right {
     @include grid-column(5)
     ul.menu {

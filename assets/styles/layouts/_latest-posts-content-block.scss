@@ -1,0 +1,74 @@
+.latest-posts-content-block {
+  .column {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    &:nth-child(odd) {
+      .hover-block {
+        background-color: $primary-color;
+        .hover-block-inner {
+          background-color: rgba($primary-color, 0.8);
+        }
+      }
+    }
+    &:nth-child(even) {
+      .hover-block {
+        background-color: #edc826;
+        .hover-block-inner {
+          background-color: rgba(#edc826, 0.8);
+        }
+      }
+    }
+    &:nth-child(3n) {
+      .hover-block {
+        background-color: grey;
+        .hover-block-inner {
+          background-color: rgba(grey, 0.8);
+        }
+      }
+    }
+    &:nth-child(4n) {
+      .hover-block {
+        background-color: #edc826;
+        .hover-block-inner {
+          background-color: rgba(#edc826, 0.8);
+        }
+      }
+    }
+    &:nth-child(5n) {
+      .hover-block {
+        background-color: grey;
+        .hover-block-inner {
+          background-color: rgba(grey, 0.8);
+        }
+      }
+    }
+    &:nth-child(6n) {
+      .hover-block {
+        background-color: $primary-color;
+        .hover-block-inner {
+          background-color: rgba($primary-color, 0.8);
+        }
+      }
+    }
+  }
+  .hover-block {
+    min-height: 300px;
+    .hover-block-title {
+      background: none !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      text-align: center;
+    }
+    .hover-block-image {
+      position: relative;
+      height: 165px;
+      width: auto;
+    }
+    .hover-block-content {
+      color: white;
+    }
+  }
+}

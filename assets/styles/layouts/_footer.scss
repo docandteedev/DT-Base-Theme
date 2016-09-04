@@ -1,22 +1,55 @@
 .footer {
-  display: none;
+  display: flex;
+  flex-direction: column;
   min-height: 65px;
   width: 100%;
-  position: absolute;
-  bottom: 0 !important;
-  left: 0;
-  background-color: $brand-primary;
+  background-color: $primary-color;
 
   .footer-inner {
     @include grid-row;
+    width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     text-align: center;
     color: white;
     padding-top: 20px;
     padding-bottom: 20px;
     text-decoration: none;
+  }
+
+  .widget-area {
+    li {
+      list-style: none;
+    }
+    .menu {
+      display: flex;
+      flex-direction: column;
+      li a {
+        color: white;
+      }
+    }
+  }
+
+  .footer-logo {
+    width: 200px;
+  }
+
+  .social-icons {
+    justify-content: space-between;
+    padding-top: 35px;
+    .social-link-list-item {
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+      width: 35px;
+      border-radius: 100%;
+      .social-link {
+        font-size: 15pt;
+      }
+    }
   }
 
   .dev-accred {

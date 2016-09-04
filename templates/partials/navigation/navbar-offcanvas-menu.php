@@ -1,4 +1,4 @@
-<div class="off-canvas position-left off-canvas-menu" id="offCanvasLeft" data-off-canvas>
+<div class="off-canvas position-right off-canvas-menu position-right" id="offCanvasRight" data-off-canvas data-position="right">
 
   <button class="close-button" aria-label="Close menu" type="button" data-close>
     <span aria-hidden="true">&times;</span>
