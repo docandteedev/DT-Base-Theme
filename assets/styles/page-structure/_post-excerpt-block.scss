@@ -1,0 +1,19 @@
+.post-excerpt-block {
+  
+  .post-excerpt-block-image {
+    overflow: hidden;
+    max-height: 245px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .post-excerpt-block-title {
+    margin-top: 1rem;
+  }
+  hr {
+    width: 100%;
+  }
+  .button {
+    background-color: $secondary-color !important;
+  }
+}

@@ -1,0 +1,40 @@
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;
+  align-items: center;
+  background-color: transparent !important;
+  width: 240px;
+  .social-link-list-item {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #CB9924;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .social-link {
+    text-decoration: none;
+    color: white;
+    font-size: 13pt;
+  }
+  // .fa-facebook:hover {
+  //   color: #3b5998;
+  // }
+  // .fa-twitter:hover {
+  //   color: #00aced;
+  // }
+  // .fa-linkedin:hover {
+  //   color: #007bb5;
+  // }
+  // .fa-github:hover {
+  //   color: black;
+  // }
+  // .fa-instagram:hover {
+  //   color: #125688;
+  // }
+}

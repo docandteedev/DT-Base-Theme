@@ -1,0 +1,105 @@
+.repeatable-block-container {
+  .row {
+    height: 100%;
+    .hover-block {
+      height: 260px;;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      @include breakpoint(medium down) {
+        margin-top: rem-calc(15px);
+        margin-bottom: rem-calc(15px);
+      }
+      .hover-block-image {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+		display: flex;
+      }
+      .hover-block-inner {
+        position: relative;
+        display: none;
+        text-align: center;
+        background-color: $secondary-color;
+        align-items: center;
+        color: black;
+        height: 100%;
+        width: 100%;
+        opacity: 0.9;
+      }
+      &:hover .hover-block-inner {
+        display: flex;
+		flex: 0 0 100%;
+      }
+      &.bounce:hover .hover-block-inner {
+        @include bounceIn(
+			$duration: 0.75s
+		);
+      }
+      &.pulse:hover .hover-block-inner {
+        @include pulse(
+			$duration: 0.75s
+		);
+      }
+      &.fade:hover .hover-block-inner {
+        @include fadeIn(
+			$duration: 0.75s
+		);
+      }
+      &.zoom:hover .hover-block-inner {
+        @include zoomIn(
+			$duration: 0.75s
+		);
+      }
+      .hover-block-overlay {
+        background-color: rgba(0, 0, 0, 0.3);
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+      }
+      .hover-block-title {
+        position: relative;
+        right:0;
+        left: 0;
+        margin:0 auto;
+		color: #fff;
+		padding: 0 .5rem;
+      }
+	  &:hover .hover-block-overlay .hover-block-title.hidehover {
+		  display: none;
+	  }
+      .hover-block-link {
+        height: 100%;
+        width: 100%;
+        color: white;
+        text-align: center;
+      }
+      .read-more-link {
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	border: 1px solid #fff;
+	width: 80%;
+      }
+      .hover-block-term-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 50%;
+        list-style: none;
+        font-size: 11pt;
+        li a {
+          color: #3D4D65;
+        }
+      }
+    }
+  }
+}

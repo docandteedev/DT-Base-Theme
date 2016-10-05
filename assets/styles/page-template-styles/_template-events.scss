@@ -1,0 +1,138 @@
+.page-template-template-page-events,
+.post-type-archive-tribe_events {
+  .main {
+    @extend .fullwidth;
+
+    .content {
+      @extend .fullwidth;
+    }
+
+  }
+}
+
+#tribe-events {
+  width: 100%;
+  #tribe-events-header {
+    display: none
+  }
+}
+
+.tribe-events-button {
+  display: none;
+}
+
+.tribe-bar-disabled {
+  display: none;
+}
+
+.tribe-events-page-title {
+  display: none;
+}
+
+.tribe-events-loop {
+  width: 100%;
+}
+
+.tribe-events-list-separator-month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: $primary-color;
+  color: white;
+  font-size: 28pt;
+  border-top: 10px solid black;
+  border-bottom: 10px solid black;
+}
+
+.tribe-events-loop > :nth-child(4n) {
+  background-color: $yellow;
+}
+
+.event-inner {
+  @include grid-row();
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.event-inner-left {
+  @include grid-column(6);
+  @include breakpoint(small only) {
+    @include grid-column(12);
+    @include grid-column-position(center);
+  }
+}
+
+.event-inner-right {
+  @include grid-column(6);
+  @include breakpoint(small only) {
+    @include grid-column(12);
+    @include grid-column-position(center);
+  }
+}
+
+.tribe-events-event-image a {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  max-height: 300px;
+
+  img {
+    width: 100%;
+  }
+
+}
+
+.events-page-header {
+  background-color: $blue;
+  border-top: 10px solid black;
+  height: 100px;
+  @include breakpoint(medium down) {
+    height: 300px;
+  }
+  .events-page-header-inner {
+    @include grid-row();
+    color: white;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .events-page-header-content {
+    @include grid-column(11);
+  }
+}
+
+.single-tribe_events {
+  .main {
+    .content {
+      max-width: none !important;
+      margin-top: 0;
+    }
+  }
+}
+
+.post-event {
+  @include grid-row();
+}
+
+.tribe-events-notices {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.tribe-events-single-event-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tribe-events-schedule {
+  display: none !important;
+}

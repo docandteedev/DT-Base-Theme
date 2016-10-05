@@ -1,0 +1,15 @@
+.search-submit{
+  @include button;
+  margin: auto !important;;
+}
+
+.sidebar {
+  margin-top: 20px ;
+}
+
+.widget{
+  ul{
+    list-style: none;
+    margin-left: 0;
+  }
+}

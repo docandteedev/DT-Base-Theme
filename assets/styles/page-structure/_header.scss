@@ -1,0 +1,118 @@
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
+}
+
+ul.menu {
+  background: none !important;
+}
+
+ul.submenu {
+  background: white !important;
+  text-align: left;
+}
+
+.small-nav-bar {
+  background-color: $navbar-bg-color;
+  height: $navbar-lg-height;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+  position: relative;
+  @include breakpoint(large) {
+    display: none !important;
+  }
+  @include breakpoint(medium down) {
+    height: 100px;
+  }
+  .title-bar-title div.site-logo {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    top: 10px;
+    width: 169px;
+  }
+  .menubar-icon {
+    font-size: 16pt;
+    margin-left: 10px;
+    color: black;
+  }
+  .search-icon {
+    font-size: 16pt;
+    margin-right: 10px;
+    color: black;
+  }
+  .title-bar-right {
+    position: absolute;
+    right: 10px;
+  }
+}
+
+.top-bar-inner {
+  display:flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.large-nav-bar {
+  height: $navbar-lg-height;
+  display: flex;
+  flex-direction: row;
+  background-color: $navbar-bg-color;
+  width: 100%;
+  z-index: 98;
+  position: relative;
+  justify-content: space-between;
+  @include breakpoint(medium down) {
+    display: none;
+  }
+  .top-bar-center {
+    align-self: center;
+  }
+  .top-bar-right {
+    align-self: center;
+    right: 10px;
+    height: 35px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .top-bar-left {
+    align-self: center;
+    left: 10px;
+  }
+  .top-bar-nav {
+    background: none !important;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    li {
+      padding: 5px;
+      a {
+        color: $navbar-lg-link-color;
+        &:hover {
+          background-color: $navbar-lg-link-hover-color;
+        }
+      }
+    }
+  }
+}
+
+.custom-logo {
+  height: 90px;
+  width: auto;
+  @include breakpoint(medium down) {
+    height: auto;
+  }
+}

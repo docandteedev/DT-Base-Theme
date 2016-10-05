@@ -1,0 +1,72 @@
+.content {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.fullwidth {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none;
+}
+
+.entry-title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.entry-title-centered {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+hr {
+  width: 50%;
+  background-color: $secondary-color;
+  height: 2px;
+  border: 0;
+  float: left;
+}
+
+.highlighted {
+  color: $secondary-color;
+}
+
+.no-bg {
+  background: none !important;
+}
+
+.off-canvas-wrapper {
+  overflow-x: hidden;
+}
+
+.off-canvas-wrapper-inner {
+  min-height: 100%;
+  position: static;
+}
+button:focus {
+  outline: 0;
+}
+
+
+/* Change the white to any color ;) */
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.sticky {
+  z-index: 20;
+}
+
+input[name="eme_submit_button"] {
+  @extend .button;
+  background-color: $secondary-color;
+  float: right;
+}
+
+.eme-rsvp-message {
+  background-color: $secondary-color !important;
+  border: 2px solid black !important;
+  text-align: center;
+}
