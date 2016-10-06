@@ -1,51 +1,36 @@
-@import "common/_variables";
-@import "settings/_settings";
-
+@import "settings";
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/foundation-sites/scss/foundation.scss";
 @import "../../bower_components/animatewithsass/animate.scss";
 // endbower
-
 @import "./../bower_components/formstone/dist/css/background.css";
-
 @import "node_modules/font-awesome/scss/font-awesome";
-
 // Import foundation with FlexBox mode set to true
 @include foundation-everything(true);
+@import "global";
+@import "page-structure/grid";
+@import "page-structure/topnav";
+@import "page-structure/wordpress-general";
+@import "page-structure/social-icons";
+@import "page-structure/post-block";
+@import "page-structure/filter-bar";
+@import "page-structure/map";
+@import "page-structure/gallery";
+@import "page-structure/slider";
+@import "page-structure/content-block";
+@import "page-structure/hover-block";
+@import "page-structure/post-excerpt-block";
+@import "page-structure/header";
+@import "page-structure/sidebar";
+@import "page-structure/footer";
+@import "page-structure/header--logo-center";
+@import "page-structure/off-canvas";
 
-@import "common/global";
+@import "page-template-styles/page-hero-heading";
+@import "page-template-styles/posts";
+@import "page-template-styles/posts-archive";
+@import "page-template-styles/landing-page";
+@import "page-template-styles/template-404";
 
-@import "components/buttons";
-@import "components/comments";
-@import "components/forms";
-@import "components/grid";
-@import "components/topnav";
-@import "components/wp-classes";
-@import "components/social-icons";
-@import "components/post-block";
-@import "components/filter-bar";
-@import "components/search-form";
-@import "components/map";
-@import "components/gallery";
-@import "components/slider";
-@import "components/content-block";
-@import "components/post-archive-search";
-@import "components/blockquote";
-@import "components/hover-block";
-
-@import "layouts/page-header";
-@import "layouts/header";
-@import "layouts/header--logo-center";
-@import "layouts/sidebar";
-@import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
-@import "layouts/posts-archive";
-@import "layouts/tinymce";
-@import "layouts/off-canvas";
-@import "layouts/landing-page";
-@import "layouts/404";
-
-
-@import "common/animations"; // NEEDS TO BE LAST!!!!!!!!
+@import "animations"; // NEEDS TO BE LAST!!!!!!!!

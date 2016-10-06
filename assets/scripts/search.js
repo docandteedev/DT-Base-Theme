@@ -7,7 +7,7 @@ const initSearch = () => {
         // Search Wordpress for a given term
         const searchWordpress = (term, postType) => {
             return $.ajax({
-                url: `http://localhost:8000/wp-json/swp_api/search?&s=${term}`,
+                url: `http://localhost/wp-json/swp_api/search?&s=${term}`,
                 dataType: 'json'
             }).promise()
         }

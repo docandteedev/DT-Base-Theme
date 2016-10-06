@@ -1,5 +1,8 @@
-<?php $slides = $block[slide]; ?>
-<div class="orbit slider" role="region" data-orbit data-use-m-u-i="false" data-auto-play="false">
+<?php 
+$slider = $block[slider];
+$slides = get_field('slide', $slider->ID); 
+?>
+<div class="orbit slider" role="region" data-orbit data-use-m-u-i="false" data-auto-play="false" data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
 
   <ul class="orbit-container">
 
@@ -11,11 +14,21 @@
     <?php foreach ($slides as $slide) : ?>
         <?php if ($slide[slide_background] == "Image") : ?>
 
-        <li class="orbit-slide slide image-slide lazy" data-original="<?php echo $slide[image_background]; ?>">
+        <li class="orbit-slide slide image-slide" data-interchange="[<?php echo $slide[image_background]; ?>, small], [<?php echo $slide[image_background]; ?>, default], ">
           <figcaption class="orbit-caption">
             <div class="caption-inner">
-              <h2 class="slide-title"><?php echo $slide[slide_title]; ?></h2>
-              <div class="slide-content"><?php echo $slide[slide_content]; ?></div>
+              <?php if($slide[slide_type] == "post"): ?>
+                <?php  if($slide[slide_post_type] == "testimonials") {
+                  include(locate_template("templates/partials/slide-testimonials.php"));
+                } else {
+                  get_template_part( "templates/partials/slide-post");
+                } ?>
+              <?php else: ?>
+                <h2 class="slide-title"><?php echo $slide[slide_title]; ?></h2>
+                  <div class="slide-content">
+                    <?php echo $slide[slide_content]; ?>
+                  </div>
+              <?php endif; ?>
             </div>
           </figcaption>
         </li>

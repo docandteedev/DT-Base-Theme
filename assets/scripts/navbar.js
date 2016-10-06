@@ -1,18 +1,20 @@
 import $ from 'jquery';
 
 const initNav = () => {
+	
+	const logo = $('#main-logo-wrap img.custom-logo:first');
+	
     // Navbar height change on scroll
-    let initNavHeight = 80
-    let initLogoHeight = $('.site-logo').height()
-    let initLogoWidth = $('.site-logo').width()
-    let navTop = $('.large-nav-bar').offset().top
-    let factor = 1.5
+    let initNavHeight = $('.large-nav-bar').height();
+    let navTop = $('.large-nav-bar').offset().top;
+	let initLogoHeight = logo.height();
+	let initLogoWidth = logo.width();
+    let factor = 1.5;
 
     $(() => {
         $('.large-nav-bar').data('size', 'big');
-        $('.site-logo').data('size', 'big');
     });
-
+	
     $(window).scroll(() => {
         if ($(document).scrollTop() > 0) {
             if ($('.large-nav-bar').data('size') === 'big') {
@@ -22,12 +24,11 @@ const initNav = () => {
                     height: initNavHeight / factor
                 }, 600);
 
-                // $('.site-logo').data('size','small');
-                // $('.site-logo').stop().animate({
-                //   height: initLogoHeight / factor,
-                //   width: initLogoWidth / factor
-                // },600);
-
+                logo.stop().animate({
+                  height: initLogoHeight / factor,
+                  width: initLogoWidth / factor
+                },600);
+				
                 $('.large-nav-bar-lower').stop().animate({
                     height: initNavHeight / factor
                 }, 600);
@@ -41,11 +42,10 @@ const initNav = () => {
                     height: initNavHeight + 'px'
                 }, 600);
 
-                // $('.site-logo').data('size','big');
-                // $('.site-logo').stop().animate({
-                //   height: initLogoHeight,
-                //   width: initLogoWidth
-                // },600);
+                logo.stop().animate({
+                  height: initLogoHeight,
+                  width: initLogoWidth
+                },600);
 
                 $('.large-nav-bar-lower').stop().animate({
                     height: initNavHeight

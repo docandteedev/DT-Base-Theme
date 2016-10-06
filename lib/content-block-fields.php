@@ -5,14 +5,14 @@ if (function_exists("register_field_group")) {
         'title' => 'Section Blocks',
         'fields' => array(
             array(
-                'key' => 'field_56f3f135bd07d',
+                'key' => 'section_blocks',
                 'label' => 'Section Block',
                 'name' => 'section_blocks',
                 'type' => 'repeater',
                 'layout' => 'row',
                 'sub_fields' => array(
                     array(
-                        'key' => 'field_56f3f1kdckncbd07e',
+                        'key' => 'section_block_background',
                         'label' => 'Section Block Background Image',
                         'name' => 'section_block_background_image',
                         'type' => 'image',
@@ -22,7 +22,7 @@ if (function_exists("register_field_group")) {
                         'library' => 'all'
                     ),
                     array(
-                        'key' => 'field_56f3f1kcnojdcnbd07e',
+                        'key' => 'section_block_background_color',
                         'label' => 'Section Block Background Color',
                         'name' => 'section_block_background_color',
                         'type' => 'color_picker',
@@ -30,7 +30,7 @@ if (function_exists("register_field_group")) {
                         'default_value' => '#fffff'
                     ),
                     array(
-                        'key' => 'field_56f3f1dendenojdcnbd07e',
+                        'key' => 'section_block_grid_type',
                         'label' => 'Section Grid Type',
                         'name' => 'section_block_grid_type',
                         'type' => 'select',
@@ -42,7 +42,7 @@ if (function_exists("register_field_group")) {
                         'default_value' => 'fullwidth'
                     ),
                     array(
-                        'key' => 'field_56f3fdccdo07e',
+                        'key' => 'content_block',
                         'label' => 'Content Block',
                         'name' => 'content_block',
                         'type' => 'repeater',
@@ -50,7 +50,7 @@ if (function_exists("register_field_group")) {
                         'layout' => 'row',
                         'sub_fields' => array(
                             array(
-                                'key' => 'field_56f3fdcbh4bd07e',
+                                'key' => 'content_block_title_image',
                                 'label' => 'Block Title Image',
                                 'name' => 'block_title_image',
                                 'type' => 'image',
@@ -60,7 +60,7 @@ if (function_exists("register_field_group")) {
                                 'library' => 'all'
                             ),
                             array(
-                                'key' => 'field_56f3f289bd07f',
+                                'key' => 'content_block_title_text',
                                 'label' => 'Block Title Text',
                                 'name' => 'block_title_text',
                                 'type' => 'text',
@@ -68,8 +68,8 @@ if (function_exists("register_field_group")) {
                                 'maxlength' => ''
                             ),
                             array(
-                                'key' => 'field_56f3f164bd07e',
-                                'label' => 'Block Image',
+                                'key' => 'content_block_image_background',
+                                'label' => 'Block Background Image',
                                 'name' => 'block_image',
                                 'type' => 'image',
                                 'column_width' => '',
@@ -78,7 +78,7 @@ if (function_exists("register_field_group")) {
                                 'library' => 'all'
                             ),
                             array(
-                                'key' => 'field_56f3f164dcjbe',
+                                'key' => 'content_block_layout',
                                 'label' => 'Block Layout',
                                 'name' => 'block_layout',
                                 'type' => 'select',
@@ -86,11 +86,13 @@ if (function_exists("register_field_group")) {
                                 'default_value' => 'medium-6',
                                 'choices' => array(
                                     'medium-12' => 'Full Width',
-                                    'medium-6' => 'Half Width'
+                                    'medium-6' => 'Half Width',
+                                    'medium-4' => 'Third Width',
+                                    'medium-3' => 'Quarter Width'
                                 )
                             ),
                             array(
-                                'key' => 'field_56f3f164dcelme',
+                                'key' => 'content_block_background_color',
                                 'label' => 'Block Background',
                                 'name' => 'block_background',
                                 'type' => 'color_picker',
@@ -98,20 +100,99 @@ if (function_exists("register_field_group")) {
                                 'default_value' => '#fffff'
                             ),
                             array(
-                                'key' => 'field_56f3f2kcndbd080',
+                                'key' => 'content_block_content_type',
                                 'label' => 'Block Content Type',
                                 'name' => 'block_content_type',
                                 'type' => 'select',
                                 'choices' => array(
+                                    'latest-posts' => 'Latest Posts',
                                     'repeatable-blocks' => 'Repeatable Blocks',
-                                    'repeatable-hover-blocks' => 'Repeatable Hover Blocks',
-                                    'slider' => 'Slider',
                                     'text' => 'Text'
                                 ),
                                 'default_value' => 'text'
                             ),
                             array(
-                                'key' => 'field_56f3f29dbd080',
+                                'key' => 'latest_posts_slug',
+                                'label' => 'Post Slug',
+                                'name' => 'latest_posts_slug',
+                                'type' => 'text',
+                                'default_value' => "post",
+                                'conditional_logic' => array(
+                                    array(
+                                        array(
+                                            'field' => 'content_block_content_type',
+                                            'operator' => '==',
+                                            'value' => 'latest-posts'
+                                        )
+                                    )
+                                )
+                            ),
+                            array(
+                                'key' => 'repeatable_block_large_row_count',
+                                'label' => 'Repeatable blocks per row on a large screen',
+                                'name' => 'repeatable_block_large_row_count',
+                                'type' => 'text',
+                                'default_value' => '4',
+                                 'conditional_logic' => array(
+                                    array(
+                                        array(
+                                            'field' => 'content_block_content_type',
+                                            'operator' => '==',
+                                            'value' => 'repeatable-blocks'
+                                        ),
+                                        array(
+                                            'field' => 'content_block_content_type',
+                                            'operator' => '==',
+                                            'value' => 'latest-posts'
+                                        )
+                                    )
+                                )
+                            ),
+                            
+                            array(
+                                'key' => 'repeatable_block_medium_row_count',
+                                'label' => 'Repeatable blocks per row on a medium screen',
+                                'name' => 'repeatable_block_medium_row_count',
+                                'type' => 'text',
+                                'default_value' => '2',
+                                 'conditional_logic' => array(
+                                    array(
+                                        array(
+                                            'field' => 'content_block_content_type',
+                                            'operator' => '==',
+                                            'value' => 'repeatable-blocks'
+                                        ),
+                                        array(
+                                            'field' => 'content_block_content_type',
+                                            'operator' => '==',
+                                            'value' => 'latest-posts'
+                                        )
+                                    )
+                                )
+                            ),
+                            array(
+                                'key' => 'repeatable_block_small_row_count',
+                                'label' => 'Repeatable blocks per row on a small screen',
+                                'name' => 'repeatable_block_small_row_count',
+                                'type' => 'text',
+                                'default_value' => '1',
+                                 'conditional_logic' => array(
+                                    array(
+                                        array(
+                                            'field' => 'content_block_content_type',
+                                            'operator' => '==',
+                                            'value' => 'repeatable-blocks'
+                                        ),
+                                        array(
+                                            'field' => 'content_block_content_type',
+                                            'operator' => '==',
+                                            'value' => 'latest-posts'
+                                        )
+                                    )
+                                )
+                            ),
+                            array(
+                                'key' => 'content_block_content',
                                 'label' => 'Block Content',
                                 'name' => 'block_content',
                                 'type' => 'wysiwyg',
@@ -122,7 +203,7 @@ if (function_exists("register_field_group")) {
                                 'conditional_logic' => array(
                                     array(
                                         array(
-                                            'field' => 'field_56f3f2kcndbd080',
+                                            'field' => 'content_block_content_type',
                                             'operator' => '==',
                                             'value' => 'text'
                                         )
@@ -130,14 +211,14 @@ if (function_exists("register_field_group")) {
                                 )
                             ),
                             array(
-                                'key' => 'field_56f3f2hfseabd080',
+                                'key' => 'content_block_repeatable_blocks',
                                 'label' => 'Repeatable Blocks',
                                 'name' => 'repeatable_blocks',
                                 'type' => 'repeater',
                                 'layout' => 'row',
                                 'sub_fields' => array(
                                     array(
-                                        'key' => 'field_56f3f29dsknxjd080',
+                                        'key' => 'repeatable_hover_block_type',
                                         'label' => 'Repeatable Block Type',
                                         'name' => 'repeatable_hover_block_type',
                                         'type' => 'select',
@@ -148,7 +229,7 @@ if (function_exists("register_field_group")) {
                                         )
                                     ),
                                     array(
-                                        'key' => 'field_56f3f29jbdcjd080',
+                                        'key' => 'repeatable_block_content',
                                         'label' => 'Block Content',
                                         'name' => 'repeatable_block_content',
                                         'type' => 'wysiwyg',
@@ -159,7 +240,7 @@ if (function_exists("register_field_group")) {
                                         'conditional_logic' => array(
                                             array(
                                                 array(
-                                                    'field' => 'field_56f3f29dsknxjd080',
+                                                    'field' => 'repeatable_hover_block_type',
                                                     'operator' => '==',
                                                     'value' => 'simple'
                                                 )
@@ -167,26 +248,50 @@ if (function_exists("register_field_group")) {
                                         )
                                     ),
                                     array(
-                                        'key' => 'field_56f3f29scksnknxjd080',
+                                        'key' => 'repeatable_block_post_id',
                                         'label' => 'Post ID',
                                         'name' => 'repeatable_block_post_id',
                                         'type' => 'post_object',
                                         'save_format' => 'id',
-                                         'conditional_logic' => array(
+                                        'conditional_logic' => array(
                                             array(
                                                 array(
-                                                    'field' => 'field_56f3f29dsknxjd080',
+                                                    'field' => 'repeatable_hover_block_type',
                                                     'operator' => '==',
                                                     'value' => 'post-hover'
                                                 )
                                             )
                                         )
-                                    )
+                                    ),
+									array(
+										'key' => 'repeatable_block_transition',
+										'label' => 'Transition',
+										'name' => 'repeatable_block_transition',
+										'type' => 'select',
+										'column_width' => '',
+										'choices' => array(
+											'bounce' => 'Bounce In',
+											'pulse' => 'Pulse',
+											'fade' => 'Fade In',
+											'zoom' => 'Zoom In',
+											'noanim' => 'None'
+										),
+										'default_value' => 'bounce',
+                                        'conditional_logic' => array(
+                                            array(
+                                                array(
+                                                    'field' => 'repeatable_hover_block_type',
+                                                    'operator' => '==',
+                                                    'value' => 'post-hover'
+                                                )
+                                            )
+                                        )
+									)
                                 ),
                                 'conditional_logic' => array(
                                     array(
                                         array(
-                                            'field' => 'field_56f3f2kcndbd080',
+                                            'field' => 'content_block_content_type',
                                             'operator' => '==',
                                             'value' => 'repeatable-blocks'
                                         )
@@ -194,271 +299,20 @@ if (function_exists("register_field_group")) {
                                 )
                             ),
                             array(
-                                'key' => 'field_5784befe579bd',
-                                'label' => 'Slide',
-                                'name' => 'slide',
-                                'type' => 'repeater',
-                                'instructions' => 'The slide in the slider',
+                                'key' => 'content_block_slider',
+                                'label' => 'Select the Slider',
+                                'name' => 'slider',
+                                'type' => 'post_object',
                                 'required' => 1,
                                 'conditional_logic' => array(
                                     array(
                                         array(
-                                            'field' => 'field_56f3f2kcndbd080',
+                                            'field' => 'content_block_content_type',
                                             'operator' => '==',
                                             'value' => 'slider'
                                         )
                                     )
                                 ),
-                                'wrapper' => array(
-                                    'width' => '',
-                                    'class' => '',
-                                    'id' => ''
-                                ),
-                                'row_min' => '',
-                                'row_limit' => '',
-                                'layout' => 'row',
-                                'button_label' => 'Add Row',
-                                'min' => 0,
-                                'max' => 0,
-                                'collapsed' => '',
-                                'sub_fields' => array(
-                                    array(
-                                        'key' => 'field_5784c014744b9',
-                                        'label' => 'Slide Title',
-                                        'name' => 'slide_title',
-                                        'type' => 'text',
-                                        'instructions' => 'The title at the top of the slide',
-                                        'required' => 0,
-                                        'conditional_logic' => 0,
-                                        'wrapper' => array(
-                                            'width' => 100,
-                                            'class' => '',
-                                            'id' => ''
-                                        ),
-                                        'default_value' => '',
-                                        'placeholder' => '',
-                                        'prepend' => '',
-                                        'append' => '',
-                                        'formatting' => 'html',
-                                        'maxlength' => '',
-                                        'readonly' => 0,
-                                        'disabled' => 0
-                                    ),
-                                    array(
-                                        'key' => 'field_5784c03b744ba',
-                                        'label' => 'Slide Content',
-                                        'name' => 'slide_content',
-                                        'type' => 'wysiwyg',
-                                        'instructions' => '100',
-                                        'required' => 0,
-                                        'conditional_logic' => 0,
-                                        'wrapper' => array(
-                                            'width' => '',
-                                            'class' => '',
-                                            'id' => ''
-                                        ),
-                                        'default_value' => '',
-                                        'tabs' => 'all',
-                                        'toolbar' => 'full',
-                                        'media_upload' => 1
-                                    ),
-                                    array(
-                                        'key' => 'field_5784c051744bb',
-                                        'label' => 'Slide Background Type',
-                                        'name' => 'slide_background',
-                                        'type' => 'select',
-                                        'instructions' => '',
-                                        'required' => 0,
-                                        'conditional_logic' => 0,
-                                        'wrapper' => array(
-                                            'width' => 50,
-                                            'class' => '',
-                                            'id' => ''
-                                        ),
-                                        'choices' => array(
-                                            'Video' => 'Video',
-                                            'Image' => 'Image',
-                                            'Colour' => 'Colour'
-                                        ),
-                                        'default_value' => array(
-                                            0 => 'Image'
-                                        ),
-                                        'allow_null' => 0,
-                                        'multiple' => 0,
-                                        'ui' => 0,
-                                        'ajax' => 0,
-                                        'placeholder' => '',
-                                        'disabled' => 0,
-                                        'readonly' => 0
-                                    ),
-                                    array(
-                                        'key' => 'field_5784c08c744bc',
-                                        'label' => 'Image Background',
-                                        'name' => 'image_background',
-                                        'type' => 'image',
-                                        'instructions' => 'Set the image of this slide',
-                                        'required' => 0,
-                                        'conditional_logic' => array(
-                                            array(
-                                                array(
-                                                    'field' => 'field_5784c051744bb',
-                                                    'operator' => '==',
-                                                    'value' => 'Image'
-                                                )
-                                            )
-                                        ),
-                                        'wrapper' => array(
-                                            'width' => 50,
-                                            'class' => '',
-                                            'id' => ''
-                                        ),
-                                        'preview_size' => 'thumbnail',
-                                        'library' => 'all',
-                                        'return_format' => 'url',
-                                        'min_width' => 0,
-                                        'min_height' => 0,
-                                        'min_size' => 0,
-                                        'max_width' => 0,
-                                        'max_height' => 0,
-                                        'max_size' => 0,
-                                        'mime_types' => ''
-                                    ),
-                                    array(
-                                        'key' => 'field_5784c0d5744bd',
-                                        'label' => 'Video Background',
-                                        'name' => 'video_background',
-                                        'type' => 'text',
-                                        'instructions' => 'Paste the url of the video you want to use (Vimeo or Youtube)',
-                                        'required' => 1,
-                                        'conditional_logic' => array(
-                                            array(
-                                                array(
-                                                    'field' => 'field_5784c051744bb',
-                                                    'operator' => '==',
-                                                    'value' => 'Video'
-                                                )
-                                            )
-                                        ),
-                                        'wrapper' => array(
-                                            'width' => 50,
-                                            'class' => '',
-                                            'id' => ''
-                                        ),
-                                        'default_value' => '',
-                                        'placeholder' => '',
-                                        'prepend' => '',
-                                        'append' => '',
-                                        'formatting' => 'html',
-                                        'maxlength' => '',
-                                        'readonly' => 0,
-                                        'disabled' => 0
-                                    ),
-                                    array(
-                                        'key' => 'field_5784c10a744be',
-                                        'label' => 'Color Background',
-                                        'name' => 'color_background',
-                                        'type' => 'color_picker',
-                                        'instructions' => 'Pick the color you want to use as the background',
-                                        'required' => 1,
-                                        'conditional_logic' => array(
-                                            array(
-                                                array(
-                                                    'field' => 'field_5784c051744bb',
-                                                    'operator' => '==',
-                                                    'value' => 'Colour'
-                                                )
-                                            )
-                                        ),
-                                        'wrapper' => array(
-                                            'width' => 50,
-                                            'class' => '',
-                                            'id' => ''
-                                        ),
-                                        'default_value' => 'black'
-                                    ),
-                                    array(
-                                        'key' => 'field_5784eae5f54aa',
-                                        'label' => 'Slide Buttons',
-                                        'name' => 'slide_buttons',
-                                        'type' => 'repeater',
-                                        'instructions' => '',
-                                        'required' => 0,
-                                        'conditional_logic' => 0,
-                                        'wrapper' => array(
-                                            'width' => '',
-                                            'class' => '',
-                                            'id' => ''
-                                        ),
-                                        'row_min' => '',
-                                        'row_limit' => '',
-                                        'layout' => 'row',
-                                        'button_label' => 'Add Row',
-                                        'min' => 0,
-                                        'max' => 0,
-                                        'collapsed' => '',
-                                        'sub_fields' => array(
-                                            array(
-                                                'key' => 'field_5784eaf7f54ab',
-                                                'label' => 'Button Text',
-                                                'name' => 'button_text',
-                                                'type' => 'text',
-                                                'instructions' => '',
-                                                'required' => 0,
-                                                'conditional_logic' => 0,
-                                                'wrapper' => array(
-                                                    'width' => '',
-                                                    'class' => '',
-                                                    'id' => ''
-                                                ),
-                                                'default_value' => '',
-                                                'placeholder' => '',
-                                                'prepend' => '',
-                                                'append' => '',
-                                                'formatting' => 'html',
-                                                'maxlength' => '',
-                                                'readonly' => 0,
-                                                'disabled' => 0
-                                            ),
-                                            array(
-                                                'key' => 'field_5784eb0af54ac',
-                                                'label' => 'Button Color',
-                                                'name' => 'button_color',
-                                                'type' => 'color_picker',
-                                                'instructions' => '',
-                                                'required' => 0,
-                                                'conditional_logic' => 0,
-                                                'wrapper' => array(
-                                                    'width' => '',
-                                                    'class' => '',
-                                                    'id' => ''
-                                                ),
-                                                'default_value' => ''
-                                            ),
-                                            array(
-                                                'key' => 'field_5784eb19f54ad',
-                                                'label' => 'Button Destination',
-                                                'name' => 'button_destination',
-                                                'type' => 'text',
-                                                'instructions' => '',
-                                                'required' => 0,
-                                                'conditional_logic' => 0,
-                                                'wrapper' => array(
-                                                    'width' => '',
-                                                    'class' => '',
-                                                    'id' => ''
-                                                ),
-                                                'default_value' => '',
-                                                'placeholder' => '',
-                                                'prepend' => '',
-                                                'append' => '',
-                                                'formatting' => 'html',
-                                                'maxlength' => '',
-                                                'readonly' => 0,
-                                                'disabled' => 0
-                                            )
-                                        )
-                                    )
-                                )
                             )
                         )
                     )

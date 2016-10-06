@@ -23,7 +23,11 @@
             "./dist/plugins/foundation.interchange.js",
             "./dist/plugins/foundation.util.mediaQuery.js",
             "./dist/plugins/foundation.sticky.js",
-            "./dist/plugins/foundation.util.timerAndImageLoader.js"
+            "./dist/plugins/foundation.util.timerAndImageLoader.js",
+            "./dist/plugins/foundation.drilldown.js",
+            "./dist/plugins/foundation.util.keyboard.js",
+            "./dist/plugins/foundation.util.motion.js",
+            "./dist/plugins/foundation.util.nest.js"
           ]
         },
         "jquery_lazyload": {

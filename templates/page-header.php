@@ -5,28 +5,36 @@ $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true
 $thumb_url = $thumb_url_array[0];
 ?>
 
-<?php if (get_field('show_header')) : ?>
+
+<?php if (get_field('only_show_title')) : ?>
+<div class="content">
+  <div class="page-simple-header">
+    <h1 class="entry-title"><?= Titles\title(); ?></h1>
+  </div>
+  </div>
+<?php endif; ?>
+
+<?php $hssc = get_field( 'header_slider_shortcode' ); if (!empty($hssc)) : ?>
+	<div class="slider-header">
+		<?php echo do_shortcode( $hssc ); ?>
+	</div>
+<?php elseif (get_field('show_header')) : ?>
     <?php if (!empty(get_field('slide'))) : ?>
     <?php get_template_part('templates/content-single-slider'); ?>
 <?php elseif (has_post_thumbnail()) : ?>
   <header class="page-header lazy" data-original="<?php echo $thumb_url; ?>">
       <div class="page-header-inner">
-          <h1 class="entry-title"><?= Titles\title(); ?></h1>
-            <?php if (!is_page()) : ?>
-            <div class="meta">
-                <?php get_template_part('templates/entry-meta'); ?>
-            </div>
-            <?php endif; ?>
+          <h1 class="entry-title"><?= Titles\title(); ?></h1>    
       </div>
+      <div class="page-header-background"></div>
   </header>
 <?php else : ?>
+<div class="content">
   <div class="page-simple-header">
     <h1 class="entry-title"><?= Titles\title(); ?></h1>
-    <?php if (is_page()) : ?>
-      <div class="meta">
-            <?php get_template_part('templates/entry-meta'); ?>
-      </div>
-    <?php endif; ?>
+  </div>
   </div>
             <?php endif; ?>
+            
+            
 <?php endif; ?>

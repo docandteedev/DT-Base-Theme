@@ -1,6 +1,6 @@
  <div class="title-bar small-nav-bar" data-hide-for="medium">
                     <div class="title-bar-left">
-                      <i class="fa fa-bars menubar-icon" type="button" aria-hidden="true" data-open="offCanvasLeft"></i>
+                      <button class="fa fa-bars menubar-icon" type="button" aria-hidden="true" data-open="offCanvasLeft"></button>
                     </div>
                     <span class="title-bar-title">
                       <div class="site-logo">
@@ -11,6 +11,6 @@
                       </div>
                     </span>
                     <div class="title-bar-right">
-                      <i class="fa fa-search search-icon" type="button"  aria-hidden="true" data-open="offCanvasRight"></i>
+                      <button class="fa fa-search search-icon" type="button"  aria-hidden="true" data-open="offCanvasRight"></button>
                     </div>
                   </div>

@@ -1,5 +1,5 @@
 <div class="top-bar large-nav-bar large-nav-bar--logo-centered" id="top-menu">
-  <div class="navbar-container">
+  <div class="top-bar-inner row">
     <div class="top-bar-left">
       <ul class="dropdown menu top-bar-nav" data-dropdown-menu>
         <?php if (has_nav_menu('left_menu')) :?>
