@@ -1,4 +1,5 @@
 .footer {
+<<<<<<< HEAD:assets/styles/page-structure/_footer.scss
   width: 100%;
   background-color: #233c58;
   overflow: hidden;
@@ -6,15 +7,28 @@
   .social-icons {
     justify-content: flex-start;
   }
+=======
+  display: flex;
+  flex-direction: column;
+  min-height: 65px;
+  width: 100%;
+  background-color: $primary-color;
+
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8:assets/styles/layouts/_footer.scss
   .footer-inner {
     @include grid-row;
     width: 100%;
     display: flex;
+<<<<<<< HEAD:assets/styles/page-structure/_footer.scss
+=======
+    align-items: flex-start;
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8:assets/styles/layouts/_footer.scss
     justify-content: space-between;
     color: white;
     padding-top: 40px;
     padding-bottom: 40px;
     text-decoration: none;
+<<<<<<< HEAD:assets/styles/page-structure/_footer.scss
 	flex-wrap:wrap;
 	.widget {
 		flex: 1 1 25%;
@@ -29,6 +43,44 @@
   			}
 	} 
  }
+=======
+  }
+
+  .widget-area {
+    li {
+      list-style: none;
+    }
+    .menu {
+      display: flex;
+      flex-direction: column;
+      li a {
+        color: white;
+      }
+    }
+  }
+
+  .footer-logo {
+    width: 200px;
+  }
+
+  .social-icons {
+    justify-content: space-between;
+    padding-top: 35px;
+    .social-link-list-item {
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+      width: 35px;
+      border-radius: 100%;
+      .social-link {
+        font-size: 15pt;
+      }
+    }
+  }
+
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8:assets/styles/layouts/_footer.scss
   .dev-accred {
     height: 50px;
     width: 100%;
@@ -53,4 +105,9 @@
       padding-left: 25px;
     }
   }
+<<<<<<< HEAD:assets/styles/page-structure/_footer.scss
 }
+=======
+
+}
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8:assets/styles/layouts/_footer.scss

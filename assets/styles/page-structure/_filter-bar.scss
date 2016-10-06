@@ -9,9 +9,9 @@
     height: 20px;
 
       button {
-        background: $brand-primary;
+        background: $primary-color;
         &:hover {
-          background: lighten($brand-primary, 10%);
+          background: lighten($primary-color, 10%);
         }
       }
 

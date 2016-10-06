@@ -1,10 +1,13 @@
 .large-nav-bar--logo-centered {
 
+<<<<<<< HEAD:assets/styles/page-structure/_header--logo-center.scss
   .top-bar-inner {
     @include grid-row;
     display: flex;
   }
 
+=======
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8:assets/styles/layouts/_header--logo-center.scss
   .top-bar-right {
     @include grid-column(5)
     ul.menu {

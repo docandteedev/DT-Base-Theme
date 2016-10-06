@@ -1,5 +1,9 @@
 <div class="top-bar large-nav-bar large-nav-bar--logo-centered" id="top-menu">
+<<<<<<< HEAD
   <div class="top-bar-inner row">
+=======
+  <div class="large-nav-bar-container">
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
     <div class="top-bar-left">
       <ul class="dropdown menu top-bar-nav" data-dropdown-menu>
         <?php if (has_nav_menu('left_menu')) :?>
@@ -31,7 +35,9 @@
 </div>
 
 <div class="top-bar large-nav-bar large-nav-bar--logo-centered-lower">
-  <div class="top-bar-center">
-    <?php get_template_part('templates/partials/social-links'); ?>
+  <div class="large-nav-bar-container">
+    <div class="top-bar-center">
+      <?php get_template_part('templates/partials/social-links'); ?>
+    </div>
   </div>
 </div>

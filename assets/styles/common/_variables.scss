@@ -1,0 +1,23 @@
+// Glyphicons font path
+$icon-font-path:        "../fonts/";
+
+// Grid settings
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+// Navbar
+$navbar-bg-color: white;
+$navbar-lg-link-color: white;
+$navbar-lg-link-hover-color: darken($primary-color, 10%);
+$navbar-lg-height: 100px;
+$navbar-sm-height: $navbar-lg-height;
+
+// Off-Canvas
+$off-canvas-bg-color: #212121;
+
+// Top Nav
+$topnav-bg-color: lighten($primary-color, 5%);
+$topnav-height: 35px;
+
+// Base variables for slider.
+$slider-height: 300px;

@@ -12,6 +12,30 @@ if (function_exists("register_field_group")) {
                 'layout' => 'row',
                 'sub_fields' => array(
                     array(
+<<<<<<< HEAD
+=======
+                        'key' => 'section_block_height',
+                        'label' => 'Section Block Height',
+                        'name' => 'section_block_height',
+                        'type' => 'text',
+                        'default_value' => 'auto'
+                    ),
+                    array(
+                        'key' => 'section_block_padding_top',
+                        'label' => 'Section Block Padding Top',
+                        'name' => 'section_block_padding_top',
+                        'type' => 'text',
+                        'default_value' => '0'
+                    ),
+                    array(
+                        'key' => 'section_block_padding_bottom',
+                        'label' => 'Section Block Padding Bottom',
+                        'name' => 'section_block_padding_bottom',
+                        'type' => 'text',
+                        'default_value' => '0'
+                    ),
+                    array(
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
                         'key' => 'section_block_background',
                         'label' => 'Section Block Background Image',
                         'name' => 'section_block_background_image',
@@ -100,6 +124,16 @@ if (function_exists("register_field_group")) {
                                 'default_value' => '#fffff'
                             ),
                             array(
+<<<<<<< HEAD
+=======
+                                'key' => 'content_block_animation',
+                                'label' => 'Block Animation',
+                                'name' => 'content_block_animation',
+                                'type' => 'text',
+                                'default_value' => ''
+                            ),
+                            array(
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
                                 'key' => 'content_block_content_type',
                                 'label' => 'Block Content Type',
                                 'name' => 'block_content_type',
@@ -128,18 +162,19 @@ if (function_exists("register_field_group")) {
                                 )
                             ),
                             array(
-                                'key' => 'repeatable_block_large_row_count',
-                                'label' => 'Repeatable blocks per row on a large screen',
-                                'name' => 'repeatable_block_large_row_count',
-                                'type' => 'text',
-                                'default_value' => '4',
-                                 'conditional_logic' => array(
+<<<<<<< HEAD
+=======
+                                'key' => 'latest_posts_order',
+                                'label' => 'Latest Posts Order',
+                                'name' => 'latest_posts_order',
+                                'type' => 'select',
+                                'choices' => array(
+                                    'ASC' => 'Ascending',
+                                    'DESC' => 'Descending'
+                                ),
+                                'default_value' => 'DESC',
+                                'conditional_logic' => array(
                                     array(
-                                        array(
-                                            'field' => 'content_block_content_type',
-                                            'operator' => '==',
-                                            'value' => 'repeatable-blocks'
-                                        ),
                                         array(
                                             'field' => 'content_block_content_type',
                                             'operator' => '==',
@@ -148,20 +183,82 @@ if (function_exists("register_field_group")) {
                                     )
                                 )
                             ),
+                            array(
+                                'key' => 'latest_posts_count',
+                                'label' => 'Post Count Limit',
+                                'name' => 'latest_posts_count',
+                                'type' => 'text',
+                                'default_value' => "6",
+                                'conditional_logic' => array(
+                                    array(
+                                        array(
+                                            'field' => 'content_block_content_type',
+                                            'operator' => '==',
+                                            'value' => 'latest-posts'
+                                        )
+                                    )
+                                )
+                            ),
+                            array(
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
+                                'key' => 'repeatable_block_large_row_count',
+                                'label' => 'Repeatable blocks per row on a large screen',
+                                'name' => 'repeatable_block_large_row_count',
+                                'type' => 'text',
+                                'default_value' => '4',
+<<<<<<< HEAD
+                                 'conditional_logic' => array(
+=======
+                                'conditional_logic' => array(
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
+                                    array(
+                                        array(
+                                            'field' => 'content_block_content_type',
+                                            'operator' => '==',
+                                            'value' => 'repeatable-blocks'
+<<<<<<< HEAD
+                                        ),
+=======
+                                        )
+                                    ),
+                                    array(
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
+                                        array(
+                                            'field' => 'content_block_content_type',
+                                            'operator' => '==',
+                                            'value' => 'latest-posts'
+                                        )
+                                    )
+                                )
+                            ),
+<<<<<<< HEAD
                             
+=======
+
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
                             array(
                                 'key' => 'repeatable_block_medium_row_count',
                                 'label' => 'Repeatable blocks per row on a medium screen',
                                 'name' => 'repeatable_block_medium_row_count',
                                 'type' => 'text',
                                 'default_value' => '2',
+<<<<<<< HEAD
                                  'conditional_logic' => array(
+=======
+                                'conditional_logic' => array(
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
                                     array(
                                         array(
                                             'field' => 'content_block_content_type',
                                             'operator' => '==',
                                             'value' => 'repeatable-blocks'
+<<<<<<< HEAD
                                         ),
+=======
+                                        )
+                                    ),
+                                    array(
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
                                         array(
                                             'field' => 'content_block_content_type',
                                             'operator' => '==',
@@ -176,13 +273,23 @@ if (function_exists("register_field_group")) {
                                 'name' => 'repeatable_block_small_row_count',
                                 'type' => 'text',
                                 'default_value' => '1',
+<<<<<<< HEAD
                                  'conditional_logic' => array(
+=======
+                                'conditional_logic' => array(
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
                                     array(
                                         array(
                                             'field' => 'content_block_content_type',
                                             'operator' => '==',
                                             'value' => 'repeatable-blocks'
+<<<<<<< HEAD
                                         ),
+=======
+                                        )
+                                    ),
+                                    array(
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
                                         array(
                                             'field' => 'content_block_content_type',
                                             'operator' => '==',
@@ -225,9 +332,72 @@ if (function_exists("register_field_group")) {
                                         'toolbar' => 'full',
                                         'choices' => array(
                                             'simple' => 'Simple Content Block',
-                                            'post-hover' => 'Post Hover Block'
+                                            'post-hover' => 'Post Hover Block',
+                                            'simple-hover' => 'Simple Hover Block'
                                         )
                                     ),
+                                    array(
+<<<<<<< HEAD
+                                        'key' => 'repeatable_block_content',
+                                        'label' => 'Block Content',
+                                        'name' => 'repeatable_block_content',
+=======
+                                        'key' => 'repeatable_block_title',
+                                        'label' => 'Block Title',
+                                        'name' => 'repeatable_block_title',
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
+                                        'type' => 'wysiwyg',
+                                        'column_width' => '',
+                                        'default_value' => '',
+                                        'toolbar' => 'full',
+                                        'conditional_logic' => array(
+                                            array(
+                                                array(
+                                                    'field' => 'repeatable_hover_block_type',
+                                                    'operator' => '==',
+<<<<<<< HEAD
+                                                    'value' => 'simple'
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    array(
+                                        'key' => 'repeatable_block_post_id',
+                                        'label' => 'Post ID',
+                                        'name' => 'repeatable_block_post_id',
+                                        'type' => 'post_object',
+                                        'save_format' => 'id',
+                                        'conditional_logic' => array(
+=======
+                                                    'value' => 'simple-hover'
+                                                ),
+                                            ),
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
+                                            array(
+                                                array(
+                                                    'field' => 'repeatable_hover_block_type',
+                                                    'operator' => '==',
+                                                    'value' => 'simple-hover'
+                                                )
+                                            )
+                                        )
+                                    ),
+<<<<<<< HEAD
+									array(
+										'key' => 'repeatable_block_transition',
+										'label' => 'Transition',
+										'name' => 'repeatable_block_transition',
+										'type' => 'select',
+										'column_width' => '',
+										'choices' => array(
+											'bounce' => 'Bounce In',
+											'pulse' => 'Pulse',
+											'fade' => 'Fade In',
+											'zoom' => 'Zoom In',
+											'noanim' => 'None'
+										),
+										'default_value' => 'bounce',
+=======
                                     array(
                                         'key' => 'repeatable_block_content',
                                         'label' => 'Block Content',
@@ -243,6 +413,36 @@ if (function_exists("register_field_group")) {
                                                     'field' => 'repeatable_hover_block_type',
                                                     'operator' => '==',
                                                     'value' => 'simple'
+                                                ),
+                                            ),
+                                            array(
+                                                array(
+                                                    'field' => 'repeatable_hover_block_type',
+                                                    'operator' => '==',
+                                                    'value' => 'simple-hover'
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    array(
+                                        'key' => 'repeatable_block_animation',
+                                        'label' => 'Repeatable Block Animation',
+                                        'name' => 'repeatable_block_animation',
+                                        'type' => 'text',
+                                        'default_value' => 'fadeInUp'
+                                    ),
+                                    array(
+                                        'key' => 'repeatable_block_background_image',
+                                        'label' => 'Post Block Background',
+                                        'name' => 'repeatable_block_background_image',
+                                        'type' => 'image',
+                                        'save_format' => 'url',
+                                        'conditional_logic' => array(
+                                            array(
+                                                array(
+                                                    'field' => 'repeatable_hover_block_type',
+                                                    'operator' => '==',
+                                                    'value' => 'simple-hover'
                                                 )
                                             )
                                         )
@@ -253,6 +453,7 @@ if (function_exists("register_field_group")) {
                                         'name' => 'repeatable_block_post_id',
                                         'type' => 'post_object',
                                         'save_format' => 'id',
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
                                         'conditional_logic' => array(
                                             array(
                                                 array(
@@ -262,31 +463,11 @@ if (function_exists("register_field_group")) {
                                                 )
                                             )
                                         )
-                                    ),
-									array(
-										'key' => 'repeatable_block_transition',
-										'label' => 'Transition',
-										'name' => 'repeatable_block_transition',
-										'type' => 'select',
-										'column_width' => '',
-										'choices' => array(
-											'bounce' => 'Bounce In',
-											'pulse' => 'Pulse',
-											'fade' => 'Fade In',
-											'zoom' => 'Zoom In',
-											'noanim' => 'None'
-										),
-										'default_value' => 'bounce',
-                                        'conditional_logic' => array(
-                                            array(
-                                                array(
-                                                    'field' => 'repeatable_hover_block_type',
-                                                    'operator' => '==',
-                                                    'value' => 'post-hover'
-                                                )
-                                            )
-                                        )
+<<<<<<< HEAD
 									)
+=======
+                                    ),
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
                                 ),
                                 'conditional_logic' => array(
                                     array(
@@ -297,6 +478,7 @@ if (function_exists("register_field_group")) {
                                         )
                                     )
                                 )
+<<<<<<< HEAD
                             ),
                             array(
                                 'key' => 'content_block_slider',
@@ -313,6 +495,8 @@ if (function_exists("register_field_group")) {
                                         )
                                     )
                                 ),
+=======
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
                             )
                         )
                     )

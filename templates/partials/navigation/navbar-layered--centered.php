@@ -1,5 +1,9 @@
 <div class="top-bar large-nav-bar" id="top-menu">
+<<<<<<< HEAD
   <div class="top-bar-inner row">
+=======
+  <div class="large-nav-bar-container">
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
       <div class="top-bar-left">
           <ul class="menu">
               <li class="home">
@@ -10,6 +14,14 @@
               </li>
           </ul>
       </div>
+<<<<<<< HEAD
+=======
+      <div class="top-bar-center">
+          <div class="large-nav-bar-slogan">
+              <img src="<?php echo get_template_directory_uri() . '/dist/images/slogan.png'; ?>" alt="">
+          </div>
+      </div>
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
       <div class="top-bar-right">
           <?php get_template_part('templates/partials/social-links'); ?>
       </div>
@@ -17,11 +29,13 @@
 </div>
 
 <div class="top-bar large-nav-bar large-nav-bar-lower">
-  <div class="top-bar-center">
-    <ul class="dropdown menu top-bar-nav" data-dropdown-menu>
-        <?php if (has_nav_menu('primary_navigation')) :?>
-        <?php wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'container' => '', 'items_wrap' => '%3$s', 'walker' => new Roots\Sage\Extras\Foundation_Nav_Menu()]);?>
-        <?php endif;?>
-    </ul>
-  </div>
+    <div class="large-nav-bar-container">
+        <div class="top-bar-center">
+            <ul class="dropdown menu top-bar-nav" data-dropdown-menu>
+                <?php if (has_nav_menu('primary_navigation')) :?>
+                    <?php wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'container' => '', 'items_wrap' => '%3$s', 'walker' => new Roots\Sage\Extras\Foundation_Nav_Menu()]);?>
+                <?php endif;?>
+            </ul>
+        </div>
+    </div>
 </div>

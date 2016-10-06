@@ -28,6 +28,7 @@ ul.submenu {
   align-items: center;
   z-index: 99;
   position: relative;
+<<<<<<< HEAD:assets/styles/page-structure/_header.scss
   @include breakpoint(large) {
     display: none !important;
   }
@@ -51,10 +52,29 @@ ul.submenu {
     font-size: 16pt;
     margin-right: 10px;
     color: black;
+=======
+  height: 80px;
+
+  @include breakpoint(large) {
+    display: none !important;
+  }
+
+  .menubar-icon {
+    font-size: 16pt;
+    margin-left: 10px;
+    color: $primary-color;
+  }
+
+  .title-bar-title {
+    padding-left: 10px;
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8:assets/styles/layouts/_header.scss
   }
   .title-bar-right {
-    position: absolute;
-    right: 10px;
+    padding-right: 10px;
+  }
+
+  .custom-logo {
+    height: 60px;
   }
 }
 
@@ -66,8 +86,6 @@ ul.submenu {
 
 .large-nav-bar {
   height: $navbar-lg-height;
-  display: flex;
-  flex-direction: row;
   background-color: $navbar-bg-color;
   width: 100%;
   z-index: 98;
@@ -76,6 +94,7 @@ ul.submenu {
   @include breakpoint(medium down) {
     display: none;
   }
+<<<<<<< HEAD:assets/styles/page-structure/_header.scss
   .top-bar-center {
     align-self: center;
   }
@@ -90,6 +109,19 @@ ul.submenu {
     align-self: center;
     left: 10px;
   }
+=======
+
+.top-bar-right {
+  align-self: center;
+  height: 35px;
+}
+
+.top-bar-left {
+  align-self: center;
+  left: 10px;
+}
+
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8:assets/styles/layouts/_header.scss
   .top-bar-nav {
     background: none !important;
     text-align: center;
@@ -97,6 +129,7 @@ ul.submenu {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+<<<<<<< HEAD:assets/styles/page-structure/_header.scss
     li {
       padding: 5px;
       a {
@@ -104,11 +137,20 @@ ul.submenu {
         &:hover {
           background-color: $navbar-lg-link-hover-color;
         }
+=======
+
+    li a {
+      color: $navbar-lg-link-color;
+      font-weight: 700;
+      &:hover {
+        background-color: $navbar-lg-link-hover-color;
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8:assets/styles/layouts/_header.scss
       }
     }
   }
 }
 
+<<<<<<< HEAD:assets/styles/page-structure/_header.scss
 .custom-logo {
   height: 90px;
   width: auto;
@@ -116,3 +158,38 @@ ul.submenu {
     height: auto;
   }
 }
+=======
+.large-nav-bar-lower {
+  height: 60px !important;
+  background-color: $primary-color !important;
+}
+
+.top-bar-center {
+  margin: 0 auto;
+}
+
+.large-nav-bar-container {
+  @include grid-row();
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.large-nav-bar-slogan {
+  img {
+    height: 30px;
+  }
+  @include bounceInDown(
+          $duration: 1s,
+          $delay: .5s,
+          $function: ease,
+          $fill: both
+  );
+}
+
+.custom-logo {
+  height: 80px;
+  width: auto;
+}
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8:assets/styles/layouts/_header.scss

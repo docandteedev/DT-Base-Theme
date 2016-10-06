@@ -76,15 +76,30 @@ $content-block-padding: 20px;
 $global-font-size: 15px;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
+<<<<<<< HEAD:assets/styles/_settings.scss
 $foundation-palette: ( primary: #515047, secondary: #CB9924, success: #3adb76, warning: #ffae00, alert: #ec5840, );
+=======
+$foundation-palette: (
+  primary: rgb(119, 207, 226),
+  secondary: #00ecc5,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #ec5840,
+);
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8:assets/styles/settings/_settings.scss
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
+<<<<<<< HEAD:assets/styles/_settings.scss
 $body-font-color: #515047;
 $body-font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+=======
+$body-font-color: $black;
+$body-font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8:assets/styles/settings/_settings.scss
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -131,7 +146,7 @@ $code-font-weight: $global-weight-normal;
 $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: $secondary-color;
+$anchor-color: $primary-color;
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;

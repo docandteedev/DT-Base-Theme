@@ -1,7 +1,6 @@
 <div class="off-canvas-wrapper" id="smooth-state-container">
     <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
       <?php get_template_part('templates/partials/navigation/navbar-offcanvas-menu'); ?>
-        <?php get_template_part('templates/partials/navigation/navbar-offcanvas-search'); ?>
       <div class="off-canvas-content" data-off-canvas-content>
           <header data-sticky-container>
        

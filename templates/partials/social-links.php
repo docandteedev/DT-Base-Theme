@@ -4,7 +4,8 @@ $social_links = array(
     'twitter' => 'fa fa-twitter ',
     'linkedin' => 'fa fa-linkedin ',
     'github' => 'fa fa-github ',
-    'instagram' => 'fa fa-instagram'
+    'instagram' => 'fa fa-instagram',
+    'youtube' => 'fa fa-youtube'
 );
 ?>
 

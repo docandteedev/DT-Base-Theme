@@ -24,7 +24,16 @@ $thumb_url = $thumb_url_array[0];
 <?php elseif (has_post_thumbnail()) : ?>
   <header class="page-header lazy" data-original="<?php echo $thumb_url; ?>">
       <div class="page-header-inner">
+<<<<<<< HEAD
           <h1 class="entry-title"><?= Titles\title(); ?></h1>    
+=======
+          <h1 class="entry-title fadeInUp"><?= Titles\title(); ?></h1>
+            <?php if (!is_page()) : ?>
+            <div class="meta">
+                <?php get_template_part('templates/entry-meta'); ?>
+            </div>
+            <?php endif; ?>
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
       </div>
       <div class="page-header-background"></div>
   </header>
@@ -35,6 +44,9 @@ $thumb_url = $thumb_url_array[0];
   </div>
   </div>
             <?php endif; ?>
+<<<<<<< HEAD
             
             
+=======
+>>>>>>> c3a5c39cc875b2388c172fd6a9bb2cec0cf559d8
 <?php endif; ?>
